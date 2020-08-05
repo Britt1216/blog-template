@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blogger Template Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.auth0.com/styleguide/core/2.0.5/core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.auth0.com/styleguide/components/2.0.0/components.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/latest/js.cookie.min.js"></script>
+    <script src="/auth0.js"></script>
+    <script src="/cordova-auth0-plugin.js"></script>
+
+    <style>
+      .row {
+        margin: 10px 0;
+      }
+
+      pre {
+        margin: 0 0 10px 0;
+        min-height: 300px;
+      }
+
+      code {
+        min-height: 300px;
+      }
+
+      h2 {
+        margin: 20px 0;
+      }
+
+      code span {
+        color: red;
+      }
+
+      code details {
+        padding: 5px;
+        border-radius: 4px;
+      }
+
+      code details p {
+        margin: 5px 0 0 0;
+      }
+
+      code details.error {
+        background: rgba(255, 0, 0, 0.1);
+      }
+
+      #clear-console {
+        cursor: pointer;
+      }
+    </style>
+    <script type="text/javascript">
+      function HTMLConsole(options) {
+        this.ele = $(options.selector);
+        this.data = [];
+        var _this = this;
+        var data;
+        if ((data = localStorage.getItem('consoleData'))) {
+          data = JSON.parse(data);
+          data.forEach(function(d) {
+            _this.dumpCallback(d.error ? d : null, d.error ? null : d);
+          });
+        }
+      }
+
+      HTMLConsole.prototype.clear = function() {
+        this.data = [];
+        this.ele.html('');
+        localStorage.removeItem('consoleData');
+      };
+
+      HTMLConsole.prototype.dumpCallback = function(err, data) {
+        if (err) {
+          return this.dump(err, 'error');
+        }
+        if (data && data.error) {
+          return this.dump(data, 'error');
+        }
+        if (data) {
+          return this.dump(data);
+        }
+      };
+
+      HTMLConsole.prototype.dump = function(o, className) {
+        className = className || '';
+
+        this.data.push(o);
+        localStorage.setItem('consoleData', JSON.stringify(this.data));
+
+        function replacer(key, value) {
+          if (typeof value === 'object') {
+            return value;
+          }
+          return '<span>' + value + '</span>';
+        }
+
+        var plainStr = JSON.stringify(o).substr(0, 50);
+        var str = JSON.stringify(o, replacer, 4);
+        var html =
+          '<details class="' +
+          className +
+          '">' +
+          '<summary>' +
+          plainStr +
+          '</summary>' +
+          '<p>' +
+          str +
+          '</p>' +
+          '</details>';
+
+        this.ele.append(html);
+
+        this.ele.find('details').removeAttr('open');
+        this.ele
+          .find('details')
+          .last()
+          .attr('open', true);
+      };
+    </script>
+  </head>
+
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Auth0.JS playground</h1>
+      </div>
+      <div class="col-xs-6">
+        <h2>Actions</h2>
+
+        <hr />
+
+        <div>
+          <h4>Login with username and password:</h4>
+          <p>
+            <input
+              class="form-control login-username update-user-email"
+              value=""
+            />
+          </p>
+          <p>
+            <input
+              class="form-control login-password update-user-password"
+              value=""
+            />
+          </p>
+          <p>
+            <input
+              type="button"
+              class="btn btn-default login-db"
+              value="login"
+            />
+          </p>
+        </div>
+
+        <hr />
+
+    </script>
+  </body>
+</html>
