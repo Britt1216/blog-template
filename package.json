@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Britt1216/blog-template#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.1.0"
+    "express-handlebars": "^5.1.0",
+    "mysql2": "^2.1.0"
   }
 }
