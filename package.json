@@ -1,0 +1,21 @@
+{
+  "name": "blog-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Britt1216/blog-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Britt1216/blog-template/issues"
+  },
+  "homepage": "https://github.com/Britt1216/blog-template#readme"
+}
