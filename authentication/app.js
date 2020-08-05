@@ -1,16 +1,16 @@
-// var express = require('express');
-// var path = require('path');
-// var logger = require('morgan');
-// var cookieParser = require('cookie-parser');
-// var session = require('express-session');
-// var dotenv = require('dotenv');
-// var passport = require('passport');
-// var Auth0Strategy = require('passport-auth0');
-// var flash = require('connect-flash');
-// var userInViews = require('./lib/middleware/userInViews');
-// var authRouter = require('./routes/auth');
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var dotenv = require('dotenv');
+var passport = require('passport');
+var Auth0Strategy = require('passport-auth0');
+var flash = require('connect-flash');
+var userInViews = require('./lib/middleware/userInViews');
+var authRouter = require('./routes/auth');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 dotenv.config();
 
