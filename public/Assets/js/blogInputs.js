@@ -33,6 +33,8 @@ const layout1Input = () => {
     inputDiv.append(`</form>`);
     inputDiv.append(`</div>`);
     inputDiv.append(`</div>`);
+
+    inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
 };
 
 const layout2Input = () => {
@@ -58,4 +60,6 @@ const layout2Input = () => {
     inputDiv.append(`</form>`);
     inputDiv.append(`</div>`);
     inputDiv.append(`</div>`);
+
+    inputDiv.append(`<button id="submit2-btn"> Submit </button>`)
 }
