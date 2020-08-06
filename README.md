@@ -15,7 +15,7 @@
     <br />
   <p align="center"> 
 <br />
-<img src="./server.PNG" alt="coding for server" id="code for server javascript" height="500px" width="1000px">
+<img src="./server.PNG" alt="coding for server" id="code for server javascript" height="500px" width="500px">
  
 </p>
 
@@ -25,7 +25,7 @@
      <br />
   <p align="center"> 
 <br />
-<img src="./main handlebars.PNG" alt="coding for handlebars" id="code for handlebars" height="500px" width="1000px">
+<img src="./main handlebars.PNG" alt="coding for handlebars" id="code for handlebars" height="500px" width="500px">
  
 </p>
 
@@ -66,6 +66,14 @@
 
 4. Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.
 
+   <br />
+  <p align="center"> 
+<br />
+<img src="./seed.PNG" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="500px">
+ 
+</p>
+
+
 5. Close out of the MySQL command line tool: exit.
 
 * Controller setup
@@ -82,15 +90,16 @@
    <br />
   <p align="center"> 
 <br />
-<img src="./index 1.PNG" alt="coding for index 1" id="code for index javascript" height="500px" width="1000px">
+<img src="./index 1.PNG" alt="coding for index 1" id="code for index javascript" height="500px" width="500px">
  
 </p>
 
-  <br />
+   <br />
   <p align="center"> 
 <br />
-<img src="./index 2.PNG" alt="coding for index 2" id="code for index javascript" height="500px" width="1000px">
+<img src="./index 2.PNG" alt="coding for index 2" id="code for index javascript" height="500px" width="500px">
  
 </p>
+
 
 2. Create the router for the app, and export the router at the end of your file.
