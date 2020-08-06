@@ -11,12 +11,14 @@
   3. Install the Express npm package: npm install express.
 
   4. Create a server.js file.
-  <br />
+
+    <br />
   <p align="center"> 
 <br />
-<img src="./server.png" alt="server.js" id="code for server.js" height="500px" width="2000px">
+<img src="./server.PNG" alt="coding for deparments" id="code for department information" height="500px" width="2000px">
  
 </p>
+
   
 
   5. Install the Handlebars npm package: npm install express-handlebars.
