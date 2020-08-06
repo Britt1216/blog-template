@@ -58,6 +58,4 @@ const layout2Input = () => {
     inputDiv.append(`</form>`);
     inputDiv.append(`</div>`);
     inputDiv.append(`</div>`);
-
-
 }
