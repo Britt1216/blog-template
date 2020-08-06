@@ -47,4 +47,3 @@ passport.deserializeUser(function(obj, cb) {
 
 // Exporting our configured passport
 module.exports = passport;
-© 2020 GitHub, Inc.
