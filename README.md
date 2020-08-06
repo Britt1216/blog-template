@@ -14,7 +14,7 @@
   <br />
   <p align="center"> 
 <br />
-<img src="./readMe./server.png" alt="server.js" id="code for server.js" height="500px" width="2000px">
+<img src="./server.png" alt="server.js" id="code for server.js" height="500px" width="2000px">
  
 </p>
   
