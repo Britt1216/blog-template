@@ -5,23 +5,15 @@ const express = require("express");
 const router = express.Router();
 
 const { Layout1Post }  = require("../models");
-
+const { Layout2Post }  = require("../models");
 
 router.get("/", (req, res) => {
     res.render("index");
 })
 
-// router.get("/api/posts", (req, res) => {
-//     Layout1Post.findAll({
-//         include: [Layout1Post]
-//     }).then(post => {
-//         console.log("Post Test: ", post);
-//         res.json(post);
-//     })
-    
-// });
 
 router.get("/post", (req, res) => {
+    Layout2Post.create(req.body)
     res.render("post");
 });
 
