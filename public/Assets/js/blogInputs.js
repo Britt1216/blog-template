@@ -62,7 +62,6 @@ $('document').ready(function(){
         inputDiv.append(`</div>`);
         inputDiv.append(`</div>`);
 
-<<<<<<< HEAD
         inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
     }
 
@@ -91,9 +90,6 @@ $('document').ready(function(){
         console.log("Now on Post Page");
     });
 });
-=======
-    inputDiv.append(`<button id="submit2-btn"> Submit </button>`)
-}
 
 
 $("#post-btn").on("click", function() {
@@ -104,4 +100,3 @@ $("#home-btn").on("click", function() {
     console.log("Now on Home Page");
 });
 
->>>>>>> master
