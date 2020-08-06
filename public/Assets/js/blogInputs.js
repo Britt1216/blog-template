@@ -1,5 +1,11 @@
 console.log("blogInputs.js TEST");
 
+$("#home-btn").on("click", function() {
+    console.log("");
+    // layout1Input();
+});
+
+
 $("#layout1-btn").on("click", function() {
     console.log("Layout1 TEST");
     layout1Input();
