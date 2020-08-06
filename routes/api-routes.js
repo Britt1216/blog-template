@@ -15,5 +15,11 @@ module.exports = function(app) {
    
   });
 
+  app.post("/post/new", (req, res) => {
+    Layout2Post.create(req.params).then(results => {
+      res.json(results);
+      res.end();
+    })
+  });
 
 }
