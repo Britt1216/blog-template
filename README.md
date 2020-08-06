@@ -52,7 +52,13 @@
 
 6. Still in the db folder, create a seeds.sql file. In this file, write insert queries to populate the burgers table with at least three entries.
 
-!!!!! add seed image here !!!!!!!
+   <br />
+  <p align="center"> 
+<br />
+<img src="./seed.png" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="1000px">
+ 
+</p>
+
 
 7. Run the schema.sql and seeds.sql files into the mysql server from the command line
 
@@ -65,14 +71,6 @@
 3. With the mysql> command line tool running, enter the command source schema.sql. This will run your schema file and all of the queries in it -- in other words, you'll be creating your database.
 
 4. Now insert the entries you defined in seeds.sql by running the file: source seeds.sql.
-
-   <br />
-  <p align="center"> 
-<br />
-<img src="./seed.png" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="500px">
- 
-</p>
-
 
 5. Close out of the MySQL command line tool: exit.
 
@@ -101,5 +99,28 @@
  
 </p>
 
-
 2. Create the router for the app, and export the router at the end of your file.
+
+* View setup
+
+1. Inside your blogger directory, create a folder named views.
+
+2. Create the index.handlebars file inside views directory.
+
+3. Create the layouts directory inside views directory.
+
+4. Create the main.handlebars file inside layouts directory.
+
+   <br />
+  <p align="center"> 
+<br />
+<img src="./main handlebars.PNG" alt="coding for handlebars" id="code for main handlebars" height="500px" width="500px">
+ 
+</p>
+
+
+5. Setup the main.handlebars file so it's able to be used by Handlebars.
+
+6. Setup the index.handlebars to have the template that Handlebars can render onto.
+
+7. Create a button in index.handlebars that will submit the user input into the database.
