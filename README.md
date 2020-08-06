@@ -69,7 +69,7 @@
    <br />
   <p align="center"> 
 <br />
-<img src="./seed.PNG" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="500px">
+<img src="./seed.png" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="500px">
  
 </p>
 
