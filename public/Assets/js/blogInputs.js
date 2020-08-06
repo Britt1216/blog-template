@@ -12,7 +12,7 @@ $("#layout2-btn").on("click", function() {
 
 const layout1Input = () => {
     const inputDiv = $("#input-div")
-
+    inputDiv.empty();
     inputDiv.append(`<form>`);
     inputDiv.append(`<div class="form-group">`);
     inputDiv.append(`<label>Title</label>`);
@@ -37,12 +37,13 @@ const layout1Input = () => {
 
 const layout2Input = () => {
     const inputDiv = $("#input-div")
-
+    inputDiv.empty();
     inputDiv.append(`<form>`);
     inputDiv.append(`<div class="form-group">`);
     inputDiv.append(`<label>Title</label>`);
     inputDiv.append(`<input class="form-control" id="title-input">`);
     inputDiv.append(`<label>Img1</label>`);
+    inputDiv.append(`<input class="form-control" id="img1-input">`);
     inputDiv.append(`<label>Header 1</label>`);
     inputDiv.append(`<input class="form-control" id="header1-input">`);
     inputDiv.append(`<label>Text 1</label>`);
@@ -57,6 +58,4 @@ const layout2Input = () => {
     inputDiv.append(`</form>`);
     inputDiv.append(`</div>`);
     inputDiv.append(`</div>`);
-
-
 }
