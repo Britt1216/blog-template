@@ -1,11 +1,5 @@
 console.log("blogInputs.js TEST");
 
-$("#home-btn").on("click", function() {
-    console.log("");
-    // layout1Input();
-});
-
-
 $("#layout1-btn").on("click", function() {
     console.log("Layout1 TEST");
     layout1Input();
@@ -69,3 +63,13 @@ const layout2Input = () => {
 
     inputDiv.append(`<button id="submit2-btn"> Submit </button>`)
 }
+
+
+$("#post-btn").on("click", function() {
+    console.log("Now on Post Page");
+});
+
+$("#home-btn").on("click", function() {
+    console.log("Now on Home Page");
+});
+

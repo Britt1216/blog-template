@@ -1,11 +1,8 @@
 const express = require("express");
 
-
-
 const router = express.Router();
 
 const { Layout1Post }  = require("../models");
-
 
 router.get("/", (req, res) => {
     res.render("index");
@@ -24,7 +21,6 @@ router.get("/", (req, res) => {
 router.get("/post", (req, res) => {
     res.render("post");
 });
-
 
 router.post("/post/new", (req, res) => {
     Layout1Post.create()
