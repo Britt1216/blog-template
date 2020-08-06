@@ -42,13 +42,16 @@
 
 4. Switch to or use the blogger.
 
-5. Create a blogger table with these fields:
+5. Create a blogger table with these fields for each of the templates:
 
     1. id: an auto incrementing int that serves as the primary key.
-  
-    2. !!!!!!!!!!!!!!!!!!!!.
-  
-    3. !!!!!!!!!!!!!!!!!!!!!!!.
+
+       <br />
+  <p align="center"> 
+<br />
+<img src="./mysql_schema.PNG" alt="coding for database via mysql" id="code for database via mysql" height="500px" width="500px">
+ 
+</p>
 
 6. Still in the db folder, create a seeds.sql file. In this file, write insert queries to populate the burgers table with at least three entries.
 
