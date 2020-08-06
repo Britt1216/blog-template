@@ -65,38 +65,35 @@ $('document').ready(function(){
         inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
     }
 
-    $("body").on("click", "#submit2-btn", function(event) {
+    $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
         event.preventDefault();
         const newPostObj2 = {
             title: $("#2title-input").val().trim(),
             img1: $("#2img1-input").val().trim(),
             header1: $("#2header1-input").val().trim(),
             text1: $("#2text1-input").val().trim(),
-            header2: $("#2header2-input").val().trim(),
-            text2: $("#2text2-input").val().trim(),
+            sideHead: $("#2header2-input").val().trim(),
+            sideText: $("#2text2-input").val().trim(),
             category: $("#2category-input").val().trim()
         }
 
         console.log("Layout Button Test", newPostObj2);
+
+        newPost(newPostObj2);
     });
 
-    const newPost = (Post) => {
-        $.post("/api/new/", Post, () => {
-
+    const newPost = function(Post) {
+        $.post("/api/posts", Post, function() {
+            console.log("Successfully added post!");
         })
     }
+
 
     $("#post-btn").on("click", function() {
         console.log("Now on Post Page");
     });
+
+    $("#home-btn").on("click", function() {
+        console.log("Now on Home Page");
+    });
 });
-
-
-$("#post-btn").on("click", function() {
-    console.log("Now on Post Page");
-});
-
-$("#home-btn").on("click", function() {
-    console.log("Now on Home Page");
-});
-
