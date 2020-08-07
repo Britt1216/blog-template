@@ -13,14 +13,48 @@
     </div>
 </div>
 
+{{!-- <div class="row">
+    {{#each post}}
+    <ul class="row">
+        <p class="row"> Title: {{title}} </p>
+        <p class="row"> img1: {{img1}} </p>
+        <p class="row"> header1: {{header1}} </p>
+        <p class="row"> text1: {{text1}} </p>
+        <p class="row"> sideHead: {{sideHead}} </p>
+        <p class="row"> sideText: {{sideText}} </p>
+        <p class="row"> category: {{category}} </p>
+    </ul>
+    {{/each}}
+</div> --}}
 
-<ul>
-    <div class="container">
-    <div class="row">
-        <h3> New Blog Post </h3>
-    </div>
+<div class="row">
+    {{#each post}}
+    <ul class="row">
+        <h3 class="row"> {{title}} </h3>
+        <p> Category: {{category}}</p>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <img class="img1L2" src="{{img1}}"/>
+                </div>
+                <div class="row">
+                    <h6 class="row"> {{header1}} </h6>
+                    <p class="row">
+                        {{text1}}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h6 class="row"> {{sideHead}} </h6>
+                    <p class="row"> {{sideText}} </p>
+                </div>
+            </div>
 
-</ul>
-
+        </div>
+    </ul>
+    {{/each}}
 </div>
+
+
 
