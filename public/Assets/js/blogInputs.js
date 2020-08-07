@@ -96,4 +96,10 @@ $('document').ready(function(){
     $("#home-btn").on("click", function() {
         console.log("Now on Home Page");
     });
+    
+    $(".delete-btn").on("click", function() {
+        const id = $(this).data("id")
+        console.log("Deleted id " + id);
+        
+    })
 });

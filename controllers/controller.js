@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
         const context = {
             post: results.map(content => {
               return {
+                id: content.id,
                 title: content.title,
                 img1: content.img1,
                 header1: content.header1,
@@ -36,6 +37,14 @@ router.post("/api/posts", (req, res) => {
         res.end();
     })
 });
+
+router.delete("/api/posts/:id", (req, res) => {
+    Layout2Post.destroy({ where: { id: req.params.id } }).then(results => {
+        console.log("deleted Successfully", results);
+    }).then(post => {
+        res.end();
+    })
+})
     
 
 module.exports = router;

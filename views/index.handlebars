@@ -30,8 +30,11 @@
 <div class="row">
     {{#each post}}
     <ul class="row">
-        <h3 class="row"> {{title}} </h3>
+        <p>ID: {{id}} - - - - -  </p>   
         <p> Category: {{category}}</p>
+        <button class="delete-btn" data-id={{ id }}>Delete</button>
+        <h3 class="row"> {{title}} </h3>
+        
         <div class="row">
             <div class="col-md-8">
                 <div class="row">
