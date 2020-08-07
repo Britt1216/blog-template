@@ -1,11 +1,12 @@
 console.log("blogInputs.js TEST");
 
-$("#layout1-btn").on("click", function() {
+$("#layout1-btn").on("click", function () {
+    // <button style="background: url(./images/layout1.png)" />
     console.log("Layout1 TEST");
     layout1Input();
 });
 
-$("#layout2-btn").on("click", function() {
+$("#layout2-btn").on("click", function () {
     console.log("Layout2 TEST");
     layout2Input();
 });
