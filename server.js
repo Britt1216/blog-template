@@ -2,6 +2,8 @@ const express = require("express");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
+const db = require("./models");
+
 const app = express();
 //Changes routing
 app.use(express.static("public"));
@@ -17,6 +19,8 @@ const routes = require("./controllers/controller.js");
 
 app.use(routes);
 
-app.listen(PORT, () => {
-    console.log("Server listening on localhost" + PORT);
-})
+db.sequelize.sync({ force: false }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+});

@@ -5,30 +5,65 @@
             featured content or information.</p>
     </div>
     <div class="row">
-        <h1> Welcome to your Blog! </h1>
-        <div>
-            <button id="create-btn1">Create Post<span></span></button>
+        <div class="row">
+            <h1> Welcome to your Blog! </h1>
+            <a href="/post"><button type="button" class="btn btn-secondary" id="create-btn1">Create
+                    Post<span></span></button></a>
+            <div class="dropdown">
 
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Category</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Category1</a>
-                <a class="dropdown-item" href="#">Category2</a>
-                <a class="dropdown-item" href="#">Category3</a>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Category</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Category1</a>
+                    <a class="dropdown-item" href="#">Category2</a>
+                    <a class="dropdown-item" href="#">Category3</a>
+                </div>
             </div>
         </div>
-    </div>
 
-
-    <ul>
-        <div class="container">
-            <div class="row">
-                <h3> New Blog Post </h3>
-            </div>
-
+        {{!-- <div class="row">
+    {{#each post}}
+    <ul class="row">
+        <p class="row"> Title: {{title}} </p>
+        <p class="row"> img1: {{img1}} </p>
+        <p class="row"> header1: {{header1}} </p>
+        <p class="row"> text1: {{text1}} </p>
+        <p class="row"> sideHead: {{sideHead}} </p>
+        <p class="row"> sideText: {{sideText}} </p>
+        <p class="row"> category: {{category}} </p>
     </ul>
+    {{/each}}
+</div> --}}
 
-</div>
+        <div class="row">
+            {{#each post}}
+            <ul class="row">
+                <p>ID: {{id}} - - - - - </p>
+                <p> Category: {{category}}</p>
+                <button class="delete-btn" data-id={{ id }}>Delete</button>
+                <h3 class="row"> {{title}} </h3>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <img class="img1L2" src="{{img1}}" />
+                        </div>
+                        <div class="row">
+                            <h6 class="row"> {{header1}} </h6>
+                            <p class="row">
+                                {{text1}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <h6 class="row"> {{sideHead}} </h6>
+                            <p class="row"> {{sideText}} </p>
+                        </div>
+                    </div>
+
+                </div>
+            </ul>
+            {{/each}}
+        </div>

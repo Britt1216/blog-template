@@ -1,4 +1,4 @@
-* { box-sizing: border-box; }
+/* * { box-sizing: border-box; } */
 body {
   background-color: green;
   display: grid;
@@ -73,6 +73,7 @@ li {
   .form-group {
     margin-bottom: 5px;
   }
+
   
 
 
@@ -92,3 +93,12 @@ li {
   }
 
  
+.img1L2 {
+  height: auto;
+  width: 60%;
+}
+
+
+h5 {
+  color: blue;
+}

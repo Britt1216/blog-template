@@ -1,9 +1,14 @@
 <div class="row">
     <h1> Create A New Post! </h1>
+    <a href="/"><button type="button" button id="home-btn" class="btn btn-secondary">Home</button></a>
 </div>
-<div class="row">
-    <h3> Select a Layout! </h3>
+<div class="container">
+    <div class="row">
+        <h3> Select a Layout! </h3>
+    </div>
 </div>
+{{!-- <div class="row">
+    <button id="layout1-btn"> Layout 1 </button> --}}
 
 
 {{!-- layout input field  --}}
@@ -17,25 +22,30 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="/Assets/images/layout1.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>First Layout</p>
-            </div>
+            <button type="button" class="btn" data-toggle="button" id="layout1-btn"></btn>
+                <img src="/Assets/images/layout1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>First Layout</p>
+                </div>
         </div>
         <div class="carousel-item">
-            <img src="/Assets/images/layout1.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Second Layout</p>
-            </div>
+            <button type="button" class="btn" data-toggle="button" id="layout2-btn"></btn>
+                <img src="/Assets/images/layout1.png" class=" d-block w-100" alt="...">
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+
+                </div>
+
         </div>
         <div class="carousel-item">
-            <img src="/Assets/images/layout1.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Third Layout</p>
-            </div>
+            <button type="button" class="btn" data-toggle="button" id="layout3-btn"></btn>
+                <img src="/Assets/images/layout1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Third Layout</p>
+                </div>
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -48,8 +58,13 @@
     </a>
 </div>
 {{!-- </div> --}}
-<div class="row">
+{{!-- <div class="row">
     <button id="layout1-btn"> Layout 1 ,<span></span></button>
 
     <button id="layout2-btn"> Layout 2 <span></span></button>
+</div> --}}
+<div class="container">
+    <div class="row" id="input-div">
+        {{!-- blogInputs.js generated divs here  --}}
+    </div>
 </div>
