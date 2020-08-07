@@ -1,16 +1,26 @@
-$('document').ready(function(){
+$('document').ready(function () {
     console.log("blogInputs.js TEST");
 
-    $("#layout1-btn").on("click", function() {
+    //Navigation buttons
+    $("#post-btn").on("click", function () {
+        console.log("Now on Post Page");
+    });
+
+    $("#home-btn").on("click", function () {
+        console.log("Now on Home Page");
+    });
+    //to select templates
+    $("#layout1-btn").on("click", function () {
         console.log("Layout1 TEST");
         layout1Input();
     });
 
-    $("#layout2-btn").on("click", function() {
+    $("#layout2-btn").on("click", function () {
         console.log("Layout2 TEST");
         layout2Input();
     });
 
+    //create the layout1 template
     const layout1Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
@@ -58,6 +68,7 @@ $('document').ready(function(){
                 newPost(new1Post);
             });
 
+    //create the layout2 template
     const layout2Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
@@ -97,33 +108,25 @@ $('document').ready(function(){
             category: $("#2category-input").val().trim()
         }
 
+
         console.log("Layout Button Test", newPostObj2);
 
         newPost(newPostObj2);
     });
 
-    const newPost = function(Post) {
-        $.post("/api/posts", Post, function() {
+    const newPost = function (Post) {
+        $.post("/api/posts", Post, function () {
             console.log("Successfully added post!");
         })
     }
-
-
-    $("#post-btn").on("click", function() {
-        console.log("Now on Post Page");
-    });
-
-    $("#home-btn").on("click", function() {
-        console.log("Now on Home Page");
-    });
-    
-    $(".delete-btn").on("click", function() {
+    //To delete the selected template
+    $(".delete-btn").on("click", function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
         deletePost(id);
     })
 
-    const deletePost = function(Post) {
+    const deletePost = function (Post) {
         $.ajax(`/api/posts/${Post}`, {
             type: "DELETE"
         }).then(() => {
