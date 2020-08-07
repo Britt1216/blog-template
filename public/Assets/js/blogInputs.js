@@ -20,16 +20,13 @@ $('document').ready(function () {
         layout2Input();
     });
 
-<<<<<<< HEAD
     $("#layout3-btn").on("click", function () {
         console.log("Layout3 TEST");
         layout3Input();
     });
 
 //create the layout1 template
-=======
-    //create the layout1 template
->>>>>>> master
+   
     const layout1Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
