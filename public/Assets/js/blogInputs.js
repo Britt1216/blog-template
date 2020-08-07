@@ -100,6 +100,15 @@ $('document').ready(function(){
     $(".delete-btn").on("click", function() {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
-        
+        deletePost(id);
     })
+
+    const deletePost = function(Post) {
+        $.ajax(`/api/posts/${Post}`, {
+            type: "DELETE"
+        }).then(() => {
+            console.log("Successfully Deleted " + Post);
+            location.reload();
+        });
+    }
 });
