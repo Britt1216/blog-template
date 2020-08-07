@@ -42,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         defaultValue: "Personal"
       }
+      // isLayout2: 
+      // {
+      //     type: DataTypes.BOOLEAN,
+      //     defaultValue: true                               
+      // }
     });
     return Layout2Post;
   };
