@@ -41,7 +41,9 @@ router.post("/api/posts1", (req, res) => {
 
 router.delete("/api/posts/:id", (req, res) => {
     Layout2Post.destroy({ where: { id: req.params.id } }).then(results => {
-        console.log("deleted Successfully", results);
+        Layout1Post.destroy({ where: {id: req.params.id } }).then(results1 => {
+            console.log("deleted Successfully");
+        });
     }).then(post => {
         res.end();
     })
