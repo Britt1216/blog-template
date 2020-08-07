@@ -24,12 +24,14 @@ $('document').ready(function(){
         inputDiv.append(`<textarea class="form-control" id="text1-input" rows="3"></textarea>`);
         inputDiv.append(`<label>Img1</label>`);
         inputDiv.append(`<input class="form-control" id="img1-input">`);
+        inputDiv.append(`<label>Header 2</label>`);
+        inputDiv.append(`<input class="form-control" id="header2-input">`);
         inputDiv.append(`<label>Text 2</label>`);
         inputDiv.append(`<textarea class="form-control" id="text2-input" rows="3"></textarea>`);
         inputDiv.append(`<label>Img2</label>`);
         inputDiv.append(`<input class="form-control" id="img2-input">`);
         inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="category">`);
+        inputDiv.append(`<input class="form-control" id="category-input">`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -37,6 +39,25 @@ $('document').ready(function(){
 
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
     };
+
+
+    $("body").on("click", "#submit1-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPostObj1 = {
+            title: $("#title-input").val().trim(),
+            img1: $("#header1-input").val().trim(),
+            header1: $("#text1-input").val().trim(),
+            text1: $("#img1-input").val().trim(),
+            sideHead: $("#header2-input").val().trim(),
+            sideText: $("#text2-input").val().trim(),
+            category: $("#category-input").val().trim()
+        }
+
+        console.log("Layout1 Button Test", newPostObj1);
+
+        newPost(newPostObj1);
+    });
+
 
     const layout2Input = () => {
         const inputDiv = $("#input-div")
@@ -81,6 +102,8 @@ $('document').ready(function(){
 
         newPost(newPostObj2);
     });
+
+    
 
     const newPost = function(Post) {
         $.post("/api/posts", Post, function() {

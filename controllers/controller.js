@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 
-
+const { Layout1Post } = require("../models/");
 const { Layout2Post } = require("../models/");
 
 router.get("/", (req, res) => {
@@ -21,8 +21,28 @@ router.get("/", (req, res) => {
                 category: content.category
               }
             })
-          }
-        res.render("index", { post: context.post });
+        }
+        Layout1Post.findAll().then(results => {
+            const context1 = {
+                post1: results.map(content => {
+                    return {
+                        id: content.id,
+                        title: content.title,
+                        header1: content.header1,
+                        text1: content.text1,
+                        img1: content.img1,
+                        header2: content.header2,
+                        text2: content.text2,
+                        img2: content.img2,
+                        category: content.category
+                        }
+                    })
+                }
+            res.render("index", { 
+                post: context.post,
+                post1: context1.post1
+            });
+            });
     })
 })
 
@@ -35,7 +55,10 @@ router.post("/api/posts", (req, res) => {
     Layout2Post.create(req.body).then(results => {
         res.json(results);
         res.end();
-    })
+    });
+    Layout1Post.create(req.body).then(results => {
+        res.json(results);
+        res.end();
 });
 
 router.delete("/api/posts/:id", (req, res) => {
