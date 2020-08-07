@@ -15,7 +15,7 @@
     <br />
   <p align="center"> 
 <br />
-<img src="./server.PNG" alt="coding for server" id="code for server javascript" height="500px" width="500px">
+<img src="./server.PNG" alt="coding for server" id="server_javascript" height="500px" width="500px">
  
 </p>
 
@@ -25,7 +25,7 @@
      <br />
   <p align="center"> 
 <br />
-<img src="./main handlebars.PNG" alt="coding for handlebars" id="code for handlebars" height="500px" width="500px">
+<img src="./main handlebars.PNG" alt="coding for handlebars" id="handlebars" height="500px" width="500px">
  
 </p>
 
@@ -49,7 +49,7 @@
        <br />
   <p align="center"> 
 <br />
-<img src="./mysql_schema.PNG" alt="coding for database via mysql" id="code for database via mysql" height="500px" width="500px">
+<img src="./mysql_schema.PNG" alt="coding for database via mysql" id="DB_mysql" height="500px" width="500px">
  
 </p>
 
@@ -58,7 +58,7 @@
    <br />
   <p align="center"> 
 <br />
-<img src="./seed.png" alt="seed from mysql database" id="code for seeding in mysql" height="500px" width="1000px">
+<img src="./seed.png" alt="seed from mysql database" id="seeding_mysql" height="500px" width="1000px">
  
 </p>
 
@@ -91,14 +91,14 @@
    <br />
   <p align="center"> 
 <br />
-<img src="./index 1.PNG" alt="coding for index 1" id="code for index javascript" height="500px" width="500px">
+<img src="./index 1.PNG" alt="coding for index 1" id="index_javascript2" height="500px" width="500px">
  
 </p>
 
    <br />
   <p align="center"> 
 <br />
-<img src="./index 2.PNG" alt="coding for index 2" id="code for index javascript" height="500px" width="500px">
+<img src="./index 2.PNG" alt="coding for index 2" id="index_javascript1" height="500px" width="500px">
  
 </p>
 
@@ -117,7 +117,7 @@
    <br />
   <p align="center"> 
 <br />
-<img src="./main handlebars.PNG" alt="coding for handlebars" id="code for main handlebars" height="500px" width="500px">
+<img src="./main handlebars.PNG" alt="coding for handlebars" id="main_handlebars" height="500px" width="500px">
  
 </p>
 
@@ -126,4 +126,52 @@
 
 6. Setup the index.handlebars to have the template that Handlebars can render onto.
 
-7. Create a button in index.handlebars that will submit the user input into the database.
+7. Create a form and buttons in post.handlebars that will submit the user input into the database via the form provided on the blogger template page.
+
+<br />
+  <p align="center"> 
+<br />
+<img src="./layout submits.PNG" alt="coding for blog templates" id="blog_templates" height="500px" width="500px">
+ 
+</p>
+
+
+8. Create buttons to link the forms page to the greeting page and the post page back to home page.
+
+ <br />
+  <p align="center"> 
+<br />
+<img src="./button to post.PNG" alt="coding for post page" id="post_button" height="200px" width="500px">
+ 
+</p>
+
+ <br />
+  <p align="center"> 
+<br />
+<img src="./button to home.PNG" alt="coding for home page" id="home_button" height="200px" width="500px">
+ 
+</p>
+
+9. Link layouts, home and post buttons through the bloginputs.js.
+
+ <br />
+  <p align="center"> 
+<br />
+<img src="./layout button links.PNG" alt="coding for layout buttons" id="layout_buttons" height="200px" width="500px">
+ 
+</p>
+
+<br />
+  <p align="center"> 
+<br />
+<img src="./post and home buttons.PNG" alt="coding for home and post buttons" id="nav_buttons" height="200px" width="500px">
+ 
+</p>
+
+* Creating Layouts
+
+1. 
+
+* Creating the Authentication Page
+
+1. 
