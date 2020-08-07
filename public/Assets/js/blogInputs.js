@@ -6,10 +6,7 @@ $('document').ready(function(){
         layout1Input();
     });
 
-    $("#layout2-btn").on("click", function() {
-        console.log("Layout2 TEST");
-        layout2Input();
-    });
+    
 
     const layout1Input = () => {
         const inputDiv = $("#input-div")
@@ -45,19 +42,30 @@ $('document').ready(function(){
         event.preventDefault();
         const newPostObj1 = {
             title: $("#title-input").val().trim(),
-            img1: $("#header1-input").val().trim(),
-            header1: $("#text1-input").val().trim(),
-            text1: $("#img1-input").val().trim(),
-            sideHead: $("#header2-input").val().trim(),
-            sideText: $("#text2-input").val().trim(),
+            header1: $("#header1-input").val().trim(),
+            text1: $("#text1-input").val().trim(),
+            img1: $("#img1-input").val().trim(),
+            header2: $("#header2-input").val().trim(),
+            text2: $("#text2-input").val().trim(),
+            img2: $("#img2-input").val().trim(),
             category: $("#category-input").val().trim()
         }
 
         console.log("Layout1 Button Test", newPostObj1);
 
-        newPost(newPostObj1);
+        newPost1(newPostObj1);
     });
 
+    const newPost1 = function(Post) {
+        $.post("/api/posts1", Post, function() {
+            console.log("Successfully added post to layout1!");
+        })
+    }
+
+    $("#layout2-btn").on("click", function() {
+        console.log("Layout2 TEST");
+        layout2Input();
+    });
 
     const layout2Input = () => {
         const inputDiv = $("#input-div")
@@ -107,9 +115,10 @@ $('document').ready(function(){
 
     const newPost = function(Post) {
         $.post("/api/posts", Post, function() {
-            console.log("Successfully added post!");
+            console.log("Successfully added post to layout2!");
         })
     }
+
 
 
     $("#post-btn").on("click", function() {
