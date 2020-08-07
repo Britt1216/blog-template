@@ -1,7 +1,7 @@
 $('document').ready(function () {
     console.log("blogInputs.js TEST");
 
-//Navigation buttons
+    //Navigation buttons
     $("#post-btn").on("click", function () {
         console.log("Now on Post Page");
     });
@@ -9,7 +9,7 @@ $('document').ready(function () {
     $("#home-btn").on("click", function () {
         console.log("Now on Home Page");
     });
-//to select templates
+    //to select templates
     $("#layout1-btn").on("click", function () {
         console.log("Layout1 TEST");
         layout1Input();
@@ -20,12 +20,16 @@ $('document').ready(function () {
         layout2Input();
     });
 
+<<<<<<< HEAD
     $("#layout3-btn").on("click", function () {
         console.log("Layout3 TEST");
         layout3Input();
     });
 
 //create the layout1 template
+=======
+    //create the layout1 template
+>>>>>>> master
     const layout1Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
@@ -52,7 +56,7 @@ $('document').ready(function () {
 
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
     };
-//create the layout2 template
+    //create the layout2 template
     const layout2Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
@@ -125,7 +129,8 @@ $('document').ready(function () {
             category: $("#2category-input").val().trim()
         }
 
-//create new post 
+
+        console.log("Layout Button Test", newPostObj2);
 
         console.log("Layout Button Test", newPostObj2);
         newPost(newPostObj2);
@@ -136,7 +141,7 @@ $('document').ready(function () {
             console.log("Successfully added post!");
         })
     }
-//To delete the selected template
+    //To delete the selected template
     $(".delete-btn").on("click", function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
