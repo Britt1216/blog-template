@@ -2,8 +2,6 @@
 const express = require("express");
 const router = express.Router();
 
-
-
 const { Layout2Post } = require("../models/");
 
 router.get("/", (req, res) => {

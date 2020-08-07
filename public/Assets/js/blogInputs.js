@@ -19,7 +19,12 @@ $('document').ready(function () {
         console.log("Layout2 TEST");
         layout2Input();
     });
-    
+
+    $("#layout3-btn").on("click", function () {
+        console.log("Layout3 TEST");
+        layout3Input();
+    });
+
 //create the layout1 template
     const layout1Input = () => {
         const inputDiv = $("#input-div")
@@ -54,6 +59,39 @@ $('document').ready(function () {
         inputDiv.append(`<form>`);
         inputDiv.append(`<div class="form-group">`);
         inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="3title-input">`);
+        inputDiv.append(`<label>Header 1</label>`);
+        inputDiv.append(`<input class="form-control" id="3header1-input">`);
+        inputDiv.append(`<label>Img1</label>`);
+        inputDiv.append(`<input class="form-control" id="3img1-input">`);
+        inputDiv.append(`<label>Text 1</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Img2</label>`);
+        inputDiv.append(`<input class="form-control" id="3img2-input">`);
+        inputDiv.append(`<label>Text 2</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Category</label>`);
+        inputDiv.append(`<label>Img3</label>`);
+        inputDiv.append(`<input class="form-control" id="3img3-input">`);
+        inputDiv.append(`<label>Text 3</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Category</label>`);
+        inputDiv.append(`<input class="form-control" id="3category-input">`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
+    }
+
+    //create the layout3 template
+    const layout3Input = () => {
+        const inputDiv = $("#input-div")
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
         inputDiv.append(`<input class="form-control" id="2title-input">`);
         inputDiv.append(`<label>Img1</label>`);
         inputDiv.append(`<input class="form-control" id="2img1-input">`);
@@ -72,7 +110,7 @@ $('document').ready(function () {
         inputDiv.append(`</div>`);
         inputDiv.append(`</div>`);
 
-        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
+        inputDiv.append(`<button id="submit3-btn"> Submit </button>`);
     }
 
     $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
