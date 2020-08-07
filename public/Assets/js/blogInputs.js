@@ -145,12 +145,6 @@ $('document').ready(function () {
         })
     }
     //To delete the selected template
-    $(".delete-btn").on("click", function () {
-        const id = $(this).data("id")
-        console.log("Deleted id " + id);
-        deletePost(id);
-    })
-
     const deletePost = function (Post) {
         $.ajax(`/api/posts/${Post}`, {
             type: "DELETE"
@@ -159,4 +153,12 @@ $('document').ready(function () {
             location.reload();
         });
     }
+    
+    $(".delete-btn").on("click", function () {
+        const id = $(this).data("id")
+        console.log("Deleted id " + id);
+        deletePost(id);
+    })
+
+    
 });
