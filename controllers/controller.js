@@ -2,7 +2,6 @@
 const express = require("express");
 const router = express.Router();
 
-
 const { Layout1Post } = require("../models/");
 const { Layout2Post } = require("../models/");
 

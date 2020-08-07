@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const db = require("./models");
 
 const app = express();
-
+//Changes routing
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));

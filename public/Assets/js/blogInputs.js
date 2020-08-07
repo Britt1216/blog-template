@@ -1,13 +1,26 @@
-$('document').ready(function(){
+$('document').ready(function () {
     console.log("blogInputs.js TEST");
 
-    $("#layout1-btn").on("click", function() {
+    //Navigation buttons
+    $("#post-btn").on("click", function () {
+        console.log("Now on Post Page");
+    });
+
+    $("#home-btn").on("click", function () {
+        console.log("Now on Home Page");
+    });
+    //to select templates
+    $("#layout1-btn").on("click", function () {
         console.log("Layout1 TEST");
         layout1Input();
     });
 
-    
+    $("#layout2-btn").on("click", function () {
+        console.log("Layout2 TEST");
+        layout2Input();
+    });
 
+    //create the layout1 template
     const layout1Input = () => {
         const inputDiv = $("#input-div")
         inputDiv.empty();
@@ -35,26 +48,44 @@ $('document').ready(function(){
         inputDiv.append(`</div>`);
 
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
+
     };
+        $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
+            event.preventDefault();
+            const new1Post = {
+                title: $("#title-input").val().trim(),
+                header1: $("#header1-input").val().trim(),
+                text1: $("#text1-input").val().trim(),
+                img1: $("#img1-input").val().trim(),
+                img2: $("#img2-input").val().trim(),
+                header2: $("#header2-input").val().trim(),
+                text2: $("#text2-input").val().trim(),
+                category: $("#category").val()
+            }
+    
+            console.log("Layout Button Test", new1Post);
+    
+            newPost1(new1Post);
+        });
 
 
-    $("body").on("click", "#submit1-btn", function handleFormSubit(event) {
-        event.preventDefault();
-        const newPostObj1 = {
-            title: $("#title-input").val().trim(),
-            header1: $("#header1-input").val().trim(),
-            text1: $("#text1-input").val().trim(),
-            img1: $("#img1-input").val().trim(),
-            header2: $("#header2-input").val().trim(),
-            text2: $("#text2-input").val().trim(),
-            img2: $("#img2-input").val().trim(),
-            category: $("#category-input").val().trim()
-        }
+    // $("body").on("click", "#submit1-btn", function handleFormSubit(event) {
+    //     event.preventDefault();
+    //     const newPostObj1 = {
+    //         title: $("#title-input").val().trim(),
+    //         header1: $("#header1-input").val().trim(),
+    //         text1: $("#text1-input").val().trim(),
+    //         img1: $("#img1-input").val().trim(),
+    //         header2: $("#header2-input").val().trim(),
+    //         text2: $("#text2-input").val().trim(),
+    //         img2: $("#img2-input").val().trim(),
+    //         category: $("#category-input").val().trim()
+    //     }
 
-        console.log("Layout1 Button Test", newPostObj1);
+    //     console.log("Layout1 Button Test", newPostObj1);
 
-        newPost1(newPostObj1);
-    });
+    //     newPost1(newPostObj1);
+    // });
 
     const newPost1 = function(Post) {
         $.post("/api/posts1", Post, function() {
@@ -62,10 +93,6 @@ $('document').ready(function(){
         })
     }
 
-    $("#layout2-btn").on("click", function() {
-        console.log("Layout2 TEST");
-        layout2Input();
-    });
 
     const layout2Input = () => {
         const inputDiv = $("#input-div")
@@ -106,36 +133,25 @@ $('document').ready(function(){
             category: $("#2category-input").val().trim()
         }
 
+
         console.log("Layout Button Test", newPostObj2);
 
         newPost(newPostObj2);
     });
 
-    
-
-    const newPost = function(Post) {
-        $.post("/api/posts", Post, function() {
-            console.log("Successfully added post to layout2!");
+    const newPost = function (Post) {
+        $.post("/api/posts", Post, function () {
+            console.log("Successfully added post!");
         })
     }
-
-
-
-    $("#post-btn").on("click", function() {
-        console.log("Now on Post Page");
-    });
-
-    $("#home-btn").on("click", function() {
-        console.log("Now on Home Page");
-    });
-    
-    $(".delete-btn").on("click", function() {
+    //To delete the selected template
+    $(".delete-btn").on("click", function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
         deletePost(id);
     })
 
-    const deletePost = function(Post) {
+    const deletePost = function (Post) {
         $.ajax(`/api/posts/${Post}`, {
             type: "DELETE"
         }).then(() => {
