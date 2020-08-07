@@ -2,9 +2,29 @@
 const express = require("express");
 const router = express.Router();
 
-
-
+const { Layout1Post } = require("../models/");
 const { Layout2Post } = require("../models/");
+
+router.get("/", (req, res) => {
+    Layout1Post.findAll().then(results => {
+        const context = {
+            post: results.map(content => {
+              return {
+                id: content.id,
+                title: content.title,
+                header1: content.header1,
+                text1: content.text1,
+                img1: content.img1,
+                img2: content.img2,
+                head2: content.sideHead,
+               text2: content.sideText,
+                category: content.category
+              }
+            })
+          }
+        res.render("layout1", { post: context.post });
+    })
+})
 
 router.get("/", (req, res) => {
     Layout2Post.findAll().then(results => {
