@@ -193,8 +193,8 @@ $('document').ready(function () {
             location.reload();
         });
     }
-    
-    $(".delete-btn").on("click", function () {
+
+    $("body").on("click", ".delete-btn", function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
         deletePost(id);
