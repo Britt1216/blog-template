@@ -125,8 +125,9 @@ $('document').ready(function () {
             category: $("#2category-input").val().trim()
         }
 
-        console.log("Layout Button Test", newPostObj2);
+//create new post 
 
+        console.log("Layout Button Test", newPostObj2);
         newPost(newPostObj2);
     });
 
