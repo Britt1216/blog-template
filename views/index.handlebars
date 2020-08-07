@@ -22,48 +22,68 @@
             </div>
         </div>
 
-        {{!-- <div class="row">
+<div class="row">
     {{#each post}}
     <ul class="row">
-        <p class="row"> Title: {{title}} </p>
-        <p class="row"> img1: {{img1}} </p>
-        <p class="row"> header1: {{header1}} </p>
-        <p class="row"> text1: {{text1}} </p>
-        <p class="row"> sideHead: {{sideHead}} </p>
-        <p class="row"> sideText: {{sideText}} </p>
-        <p class="row"> category: {{category}} </p>
+        <p>ID: {{this.id}} - - - - -  </p>   
+        <p> Category: {{this.category}}</p>
+        <button class="delete-btn" data-id={{this.id}}>Delete</button>
+        <h3 class="row"> {{this.title}} </h3>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <img class="img1L2" src="{{this.img1}}"/>
+                </div>
+                <div class="row">
+                    <h6 class="row"> {{this.header1}} </h6>
+                    <p class="row">
+                        {{text1}}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h6 class="row"> {{this.sideHead}} </h6>
+                    <p class="row"> {{this.sideText}} </p>
+                </div>
+            </div>
+
+        </div>
     </ul>
     {{/each}}
-</div> --}}
 
+    {{#each post1}}
+    <ul class="row">
+        <p>ID: {{this.id}} - - - - -  </p>   
+        <p> Category: {{this.category}}</p>
+        <button class="delete-btn" data-id={{this.id}}>Delete</button>
+        <h3 class="row"> {{title}} </h3>
+        
         <div class="row">
-            {{#each post}}
-            <ul class="row">
-                <p>ID: {{id}} - - - - - </p>
-                <p> Category: {{category}}</p>
-                <button class="delete-btn" data-id={{ id }}>Delete</button>
-                <h3 class="row"> {{title}} </h3>
-
+            <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <img class="img1L2" src="{{img1}}" />
-                        </div>
-                        <div class="row">
-                            <h6 class="row"> {{header1}} </h6>
-                            <p class="row">
-                                {{text1}}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <h6 class="row"> {{sideHead}} </h6>
-                            <p class="row"> {{sideText}} </p>
-                        </div>
-                    </div>
-
+                    <h6 class="row"> {{this.header1}} </h6>
+                    <p class="row">
+                         {{this.text1}} 
+                    </p>
                 </div>
-            </ul>
-            {{/each}}
+                <div class="row">
+                    <img class="img1L2" src="{{this.img2}}"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <img class="img1L2" src="{{this.img1}}"/>
+                </div>
+                <div class="row">
+                    <h6 class="row"> {{this.header2}} </h6>
+                    <p class="row">
+                        {{this.text2}}
+                    </p>
+                </div>
+            </div>
         </div>
+    </ul>
+    {{/each}}
+</div>

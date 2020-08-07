@@ -52,12 +52,12 @@ module.exports = function(sequelize, DataTypes) {
     category: {
       type: DataTypes.STRING,
       defaultValue: "Personal"
-    },
-    isLayout1: 
-    {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
     }
+    // isLayout1: 
+    // {
+    //     type: DataTypes.BOOLEAN,
+    //     defaultValue: true
+    // }
   });
   return Layout1Post;
 };
