@@ -9,9 +9,11 @@ const { Layout2Post } = require("../models/");
 router.get("/", (req, res) => {
     Layout2Post.findAll({ raw: true }).then(results2 => {
         Layout1Post.findAll({ raw: true }).then(results1 => {
+            //Layout3Post.findAll({ raw: true }).then(results3 => {
             res.render("index", { 
                 post: results2,
                 post1:  results1
+                //post3: results3
             });
         });
     });
