@@ -1,11 +1,25 @@
-/* * { box-sizing: border-box; } */
+* { box-sizing: border-box; 
+margin: 0;
+padding: 0;
+}
 body {
   background-color: green;
   display: grid;
-  place-items: center;
   height: 100vh;
     
 } 
+.jumbotron {
+    background-image: url('blogging_image.jpg');
+    height: 400px;
+  }
+  .display-4 {
+    margin: auto;
+    color: blue;
+    text-align: center; 
+  }
+  .mainbuttons {
+  display: block;
+}
 /* Button styling */
   #create-btn1 {
     border: none;
@@ -16,7 +30,7 @@ body {
     background: transparent;
     cursor: pointer;
     user-select: none;
-    color: royalblue;
+    color: black;
     overflow: hidden;
 }
 
@@ -77,14 +91,6 @@ li {
   
 
 
-  .jumbotron {
-    background-image: url('blogging_image.jpg');
-  }
-  .display-4 {
-    margin: auto;
-    color: blue;
-    text-align: center; 
-  }
   
   .carousel-inner {
     font-weight: bold;
@@ -102,3 +108,4 @@ li {
 h5 {
   color: blue;
 }
+
