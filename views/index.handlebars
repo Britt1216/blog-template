@@ -1,30 +1,37 @@
-<header>
-    <div class="container">
-        <div class="jumbotron">
+<head>
 
-            <p class="lead"></p>
+</head>
+
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Welcome to your blog</h1>
         </div>
-</header>
-<div class="row">
-    <div class="container" id="mainbuttons">
-        <div class="row">
-            <h1> Welcome to your Blog! </h1>
-            <a href="/post"><button type="button" class="btn btn-secondary" id="create-btn1">Create
-                    Post<span></span></button></a>
-            <div class="dropdown">
+    </div>
+    <div>
+        <div class="row justify-content-center" id="mainbuttons">
+            <div class="container">
+                <div class="row justify-content-center">
+                    {{!-- <h1> Welcome to your Blog! </h1> --}}
+                    <a href="/post"><button type="button" class="btn btn-secondary" id="create-btn1">Create
+                            Post<span></span></button></a>
+                    <div class="dropdown">
+                        <button class="btn btn-lg dropdown-toggle btn-primary" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
 
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Category</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Category1</a>
-                    <a class="dropdown-item" href="#">Category2</a>
-                    <a class="dropdown-item" href="#">Category3</a>
+
                 </div>
             </div>
         </div>
     </div>
-
     {{!-- <div class="row">
     {{#each post}}
     <ul class="row">
@@ -70,3 +77,4 @@
         </ul>
         {{/each}}
     </div>
+</body>
