@@ -28,6 +28,13 @@ module.exports = function(sequelize, DataTypes) {
             isUrl: true
         }
     },
+    img2: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            isUrl: true
+        }
+    },
     header2: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -42,17 +49,15 @@ module.exports = function(sequelize, DataTypes) {
             len: [1]
         }
     },
-    img2: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-            isUrl: true
-        }
-    },
     category: {
       type: DataTypes.STRING,
       defaultValue: "Personal"
     }
+    // isLayout1: 
+    // {
+    //     type: DataTypes.BOOLEAN,
+    //     defaultValue: true
+    // }
   });
   return Layout1Post;
 };

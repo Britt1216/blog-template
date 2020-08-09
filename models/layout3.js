@@ -1,19 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
-    var Layout2Post = sequelize.define("Layout2Post", {
-        title: {
+    var Layout3Post = sequelize.define("Layout3Post", {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1, 160]
         }
       },
-      img1: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              isUrl: true
-          }
-        },
       header1: {
           type: DataTypes.STRING,
           allowNull: false,
@@ -21,6 +14,13 @@ module.exports = function(sequelize, DataTypes) {
               len: [1]
           }
       },
+      img1: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            isUrl: true
+        }
+    },
       text1: {
           type: DataTypes.TEXT,
           allowNull: false,
@@ -28,25 +28,39 @@ module.exports = function(sequelize, DataTypes) {
               len: [1]
           }
       },
-      sideHead: {
-        type: DataTypes.STRING,
+      img2: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+              isUrl: true
+          }
       },
-      sideText: {
+      text2: {
+          type: DataTypes.TEXT,
+          allowNull: false,
+          validate: {
+              len: [1]
+          }
+      },
+      img2: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+              isUrl: true
+          }
+      },
+      text3: {
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
             len: [1]
         }
-      },
+    },
       category: {
         type: DataTypes.STRING,
         defaultValue: "Personal"
       }
-      // isLayout2: 
-      // {
-      //     type: DataTypes.BOOLEAN,
-      //     defaultValue: true                               
-      // }
     });
-    return Layout2Post;
+    return Layout3Post;
   };
+  
