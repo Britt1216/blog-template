@@ -38,6 +38,9 @@ $(document).ready(function() {
     }
 
     $("#signin").on("click", function () {
-      console.log("Now on Post Page");
+      $.get("/blog", results => {
+        console.log("Now on Post Page");
+      });
+      
   });
   });

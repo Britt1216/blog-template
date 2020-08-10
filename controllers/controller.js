@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-
+const path = require("path");
 const { Layout1Post } = require("../models/");
 const { Layout2Post } = require("../models/");
 const { LayoutAllPost } = require("../models/");
@@ -62,9 +62,14 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/post", (req, res) => {
+router.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, "../authentication/public/login.html"));
+});
+
+router.get("/blog", (req, res) => {
     res.render("post");
 });
+
 
 router.post("/api/posts", (req, res) => {
     LayoutAllPost.create(req.body).then(results => {

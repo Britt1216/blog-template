@@ -7,6 +7,7 @@ const db = require("./models");
 const app = express();
 //Changes routing
 app.use(express.static("public"));
+app.use(express.static("authentication"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,6 +16,7 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+require("./authentication/routes/api-routes.js")(app)
 const routes = require("./controllers/controller.js");
 
 app.use(routes);
