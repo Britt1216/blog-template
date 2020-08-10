@@ -39,30 +39,30 @@
             {{#if isLayout1}}
                 <ul class="row">
                     <p>ID: {{this.id}} - - - - - </p>
-                    <p> Category: {{this.category}}</p>
+                    <p id="1categoryText"> Category: {{this.category}}</p>
                     <button class="delete-btn" data-id={{this.id}}>Delete</button>
                     <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
-                    <h3 class="row"> {{title}} </h3>
+                    <h3 class="row" id="1titleText"> {{title}} </h3>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
-                                <h6 class="row"> {{this.header1}} </h6>
-                                <p class="row">
+                                <h6 class="row" id="1header1Text"> {{this.header1}} </h6>
+                                <p class="row" id="1text1Text">
                                     {{this.text1}}
                                 </p>
                             </div>
                             <div class="row">
-                                <img class="img1L2" src="{{this.img2}}" />
+                                <img class="img1L2" id="1img2Text" src="{{this.img2}}"  />
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                                <img class="img1L2" src="{{this.img1}}" />
+                                <img class="img1L2" id="1img1Text" src="{{this.img1}}" />
                             </div>
                             <div class="row">
-                                <h6 class="row"> {{this.header2}} </h6>
-                                <p class="row">
+                                <h6 class="row" id="1header2Text"> {{this.header2}} </h6>
+                                <p class="row" id="1text2Text">
                                     {{this.text2}}
                                 </p>
                             </div>
