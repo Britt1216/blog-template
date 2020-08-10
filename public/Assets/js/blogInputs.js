@@ -294,14 +294,14 @@ $('document').ready(function () {
                 updatePost(id, newPost2);
             });
         } else {
-            var titleText = $("#1titleText").text();
-            var header1Text = $("#1header1Text").text();
-            var text1Text = $("#1text1Text").text();
-            var img2Text = $("#1img2Text").prop('src');
-            var header2Text = $("#1header2Text").text();
-            var text2Text = $("#1text2Text").text();
-            var img1Text = $("#1img1Text").prop('src');
-            var categoryText = $("#1categoryText").text();
+            var titleText = $(`#${id}titleText`).text();
+            var header1Text = $(`#${id}header1Text`).text();
+            var text1Text = $(`#${id}text1Text`).text();
+            var img2Text = $(`#${id}img2Text`).prop('src');
+            var header2Text = $(`#${id}header2Text`).text();
+            var text2Text = $(`#${id}text2Text`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var categoryText = $(`#${id}categoryText`).text();
            
             updateDiv.empty();
             updateDiv.append(`<form>`);
