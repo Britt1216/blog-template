@@ -99,6 +99,43 @@
                     </div>
                 </ul>
             {{/if}}
+
+            {{#if isLayout3}}
+                <ul class="row">
+                    <p>ID: {{this.id}} - - - - - </p>
+                    <p> Category: {{this.category}}</p>
+                    <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                    <h3 class="row"> {{this.title}} </h3>
+                    <div class="row">
+                        <h6 class="row"> {{this.header1}}</h6>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img1L2" src="{{this.img1}}" />
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{this.text1}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img1L2" src="{{this.img2}}" />
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{this.text2}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="img1L2" src="{{this.img3}}" />
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{this.text3}}</p>
+                            </div>
+                        </div>
+                    </div>
+                        
+                </ul>
+            {{/if}}
         {{/each}}
 
     </div>

@@ -57,51 +57,26 @@ $('document').ready(function () {
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
 
     };
-        $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
-            event.preventDefault();
-            const newPost1 = {
-                title: $("#title-input").val().trim(),
-                header1: $("#header1-input").val().trim(),
-                text1: $("#text1-input").val().trim(),
-                img1: $("#img1-input").val().trim(),
-                img2: $("#img2-input").val().trim(),
-                header2: $("#header2-input").val().trim(),
-                text2: $("#text2-input").val().trim(),
-                category: $("#category").val(),
-                isLayout1: true
-            }
-    
-            console.log("Layout Button Test", newPost1);
-    
-            newPost(newPost1);
-        });
+    $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
+        event.preventDefault();
+        const newPost1 = {
+            title: $("#title-input").val().trim(),
+            header1: $("#header1-input").val().trim(),
+            text1: $("#text1-input").val().trim(),
+            img1: $("#img1-input").val().trim(),
+            img2: $("#img2-input").val().trim(),
+            header2: $("#header2-input").val().trim(),
+            text2: $("#text2-input").val().trim(),
+            category: $("#category").val(),
+            isLayout1: true
+        }
 
+        console.log("Layout Button Test", newPost1);
 
-    // $("body").on("click", "#submit1-btn", function handleFormSubit(event) {
-    //     event.preventDefault();
-    //     const newPostObj1 = {
-    //         title: $("#title-input").val().trim(),
-    //         header1: $("#header1-input").val().trim(),
-    //         text1: $("#text1-input").val().trim(),
-    //         img1: $("#img1-input").val().trim(),
-    //         header2: $("#header2-input").val().trim(),
-    //         text2: $("#text2-input").val().trim(),
-    //         img2: $("#img2-input").val().trim(),
-    //         category: $("#category-input").val().trim()
-    //     }
+        newPost(newPost1);
+    });
 
-    //     console.log("Layout1 Button Test", newPostObj1);
-
-    //     newPost1(newPostObj1);
-    // });
-
-    // const newPost1 = function(Post) {
-    //     $.post("/api/posts1", Post, function() {
-    //         console.log("Successfully added post to layout1!");
-    //     })
-    // }
-
-
+    // create the Layout2 Template
     const layout2Input = () => {
         const inputDiv = $("#input-div");
         
@@ -130,6 +105,22 @@ $('document').ready(function () {
         inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
     }
 
+    $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPost2 = {
+            title: $("#2title-input").val().trim(),
+            img1: $("#2img1-input").val().trim(),
+            header1: $("#2header1-input").val().trim(),
+            text1: $("#2text1-input").val().trim(),
+            sideHead: $("#2header2-input").val().trim(),
+            sideText: $("#2text2-input").val().trim(),
+            category: $("#2category-input").val().trim(),
+            isLayout2: true
+        }
+        console.log("Layout Button Test", newPost2);
+        newPost(newPost2);
+    });
+
     //create the layout3 template
     const layout3Input = () => {
         const inputDiv = $("#input-div");
@@ -149,7 +140,6 @@ $('document').ready(function () {
         inputDiv.append(`<input class="form-control" id="3img2-input">`);
         inputDiv.append(`<label>Text 2</label>`);
         inputDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
         inputDiv.append(`<label>Img3</label>`);
         inputDiv.append(`<input class="form-control" id="3img3-input">`);
         inputDiv.append(`<label>Text 3</label>`);
@@ -164,26 +154,26 @@ $('document').ready(function () {
         inputDiv.append(`<button id="submit3-btn"> Submit </button>`);
     }
 
-    $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
+    $("body").on("click", "#submit3-btn", function handleFormSubit(event) {
         event.preventDefault();
-        const newPost2 = {
-            title: $("#2title-input").val().trim(),
-            img1: $("#2img1-input").val().trim(),
-            header1: $("#2header1-input").val().trim(),
-            text1: $("#2text1-input").val().trim(),
-            sideHead: $("#2header2-input").val().trim(),
-            sideText: $("#2text2-input").val().trim(),
-            category: $("#2category-input").val().trim(),
-            isLayout2: true
+        const newPost3 = {
+            title: $("#3title-input").val().trim(),
+            header1: $("#3header1-input").val().trim(),
+            img1: $("#3img1-input").val().trim(),
+            text1: $("#3text1-input").val().trim(),
+            img2: $("#3img2-input").val().trim(),
+            text2: $("#3text2-input").val().trim(),
+            img3: $("#3img3-input").val().trim(),
+            text2: $("#3text3-input").val().trim(),
+            category: $("#3category-input").val().trim(),
+            isLayout3: true
         }
-
-
-        console.log("Layout Button Test", newPost2);
-
-        console.log("Layout Button Test", newPost2);
-        newPost(newPost2);
+        console.log("Layout Button Test", newPost3);
+        newPost(newPost3);
     });
 
+    
+    //create new post
     const newPost = function(Post) {
         $.post("/api/posts", Post, function () {
             console.log("Successfully added post!");
