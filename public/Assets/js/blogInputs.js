@@ -47,14 +47,23 @@ $('document').ready(function () {
         inputDiv.append(`<textarea class="form-control" id="text2-input" rows="3"></textarea>`);
         inputDiv.append(`<label>Img2</label>`);
         inputDiv.append(`<input class="form-control" id="img2-input">`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="category-input">
+        <option value="Personal">Personal</option>
+        <option value="Product Review">Product Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</div>`);
 
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
+
+        
+              
 
     };
     $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
@@ -96,8 +105,14 @@ $('document').ready(function () {
         inputDiv.append(`<input class="form-control" id="2header2-input">`);
         inputDiv.append(`<label>Side Text</label>`);
         inputDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="2category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="2category-input">
+        <option value="Personal">Personal</option>
+        <option value="Product Review">Product Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -146,8 +161,14 @@ $('document').ready(function () {
         inputDiv.append(`<input class="form-control" id="3img3-input">`);
         inputDiv.append(`<label>Text 3</label>`);
         inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="3category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="3category-input">
+        <option value="Personal">Personal</option>
+        <option value="Product Review">Product Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -229,8 +250,14 @@ $('document').ready(function () {
             updateDiv.append(`<input class="form-control" id="3img3-input">`);
             updateDiv.append(`<label>Text 3</label>`);
             updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input class="form-control" id="3category-input">`);
+            inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="3category-input">
+        <option value="Personal">Personal</option>
+        <option value="Product Review">Product Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -269,8 +296,14 @@ $('document').ready(function () {
             updateDiv.append(`<input class="form-control" id="2header2-input">`);
             updateDiv.append(`<label>Side Text</label>`);
             updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input class="form-control" id="2category-input">`);
+            inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="2category-input">
+        <option value="Personal">Personal</option>
+        <option value="Product Review">Product Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -320,8 +353,14 @@ $('document').ready(function () {
             updateDiv.append(`<textarea class="form-control" id="text2-input" rows="3">${text2Text}</textarea>`);
             updateDiv.append(`<label>Img2</label>`);
             updateDiv.append(`<input value="${img2Text}" class="form-control" id="img2-input">`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input value="${categoryText}"class="form-control" id="category-input">`);
+            inputDiv.append(`<label for="category">Select Category:</label>`);
+            inputDiv.append(`<select class="custom-select" id="category-input">
+            <option value="Personal">Personal</option>
+            <option value="Product Review">Product Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+          </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
