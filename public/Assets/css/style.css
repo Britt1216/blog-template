@@ -1,22 +1,91 @@
-/* * { box-sizing: border-box; } */
+/* overall stlying */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 body {
-  background-color: green;
-  display: grid;
-  place-items: center;
-  height: 100vh;
+  /* background-color: #e2d0c2; */
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: palegoldenrod;
+  padding: 0px;
     
 } 
+
+
+/* Top image */
+.hero-image {
+    background-image:  url("./blogging_image.jpg");
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+margin-bottom:  10px;
+  }
+  .hero-text{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  } 
+  
+  
+  /* Navagation bar under image */
+  .topnav{
+    overflow: visible;
+    width: 100%;
+ 
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .display-4 {
+    margin: auto;
+    color: blue;
+    text-align: center; 
+  }
+  .dropdown {
+    border: none;
+    display: block;
+    position: relative;
+    /* padding: 0.5em 2.2em; */
+    font-size: 20px;
+    margin-left: 15px;
+    background: royalblue;
+    color: royalblue;
+    font-size: 20px; 
+  }
+  .dropdownMenuButton {
+    background: royalblue;
+    font-size: 20px;
+  }
+
 /* Button styling */
-  #create-btn1 {
+  #create-btn1
+  {
     border: none;
     display: block;
     position: relative;
     padding: 0.5em 2.2em;
-    font-size: 25px;
+    font-size: 20px;
     background: transparent;
     cursor: pointer;
     user-select: none;
-    color: royalblue;
+    color: black;
     overflow: hidden;
 }
 
@@ -46,12 +115,13 @@ body {
 #create-btn1:hover span::before, #create-btn1:focus span::before{
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
-    background: royalblue
+    background: royalblue;
 }
 
 #create-btn1:hover, #create-btn1:focus{
     color: rgb(3, 3, 3);
 }
+
 
 
 li {
@@ -77,15 +147,7 @@ li {
   
 
 
-  .jumbotron {
-    background-image: url('blogging_image.jpg');
-  }
-  .display-4 {
-    margin: auto;
-    color: blue;
-    text-align: center; 
-  }
-  
+  /* Second page */
   .carousel-inner {
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -102,3 +164,4 @@ li {
 h5 {
   color: blue;
 }
+
