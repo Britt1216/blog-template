@@ -25,6 +25,7 @@ $('document').ready(function () {
         layout3Input();
     });
 
+
 //create the layout1 template
    
     const layout1Input = () => {
@@ -58,7 +59,7 @@ $('document').ready(function () {
     };
         $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
             event.preventDefault();
-            const new1Post = {
+            const newPost1 = {
                 title: $("#title-input").val().trim(),
                 header1: $("#header1-input").val().trim(),
                 text1: $("#text1-input").val().trim(),
@@ -66,12 +67,13 @@ $('document').ready(function () {
                 img2: $("#img2-input").val().trim(),
                 header2: $("#header2-input").val().trim(),
                 text2: $("#text2-input").val().trim(),
-                category: $("#category").val()
+                category: $("#category").val(),
+                isLayout1: true
             }
     
-            console.log("Layout Button Test", new1Post);
+            console.log("Layout Button Test", newPost1);
     
-            newPost1(new1Post);
+            newPost(newPost1);
         });
 
 
@@ -93,11 +95,11 @@ $('document').ready(function () {
     //     newPost1(newPostObj1);
     // });
 
-    const newPost1 = function(Post) {
-        $.post("/api/posts1", Post, function() {
-            console.log("Successfully added post to layout1!");
-        })
-    }
+    // const newPost1 = function(Post) {
+    //     $.post("/api/posts1", Post, function() {
+    //         console.log("Successfully added post to layout1!");
+    //     })
+    // }
 
 
     const layout2Input = () => {
@@ -164,30 +166,31 @@ $('document').ready(function () {
 
     $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
         event.preventDefault();
-        const newPostObj2 = {
+        const newPost2 = {
             title: $("#2title-input").val().trim(),
             img1: $("#2img1-input").val().trim(),
             header1: $("#2header1-input").val().trim(),
             text1: $("#2text1-input").val().trim(),
             sideHead: $("#2header2-input").val().trim(),
             sideText: $("#2text2-input").val().trim(),
-            category: $("#2category-input").val().trim()
+            category: $("#2category-input").val().trim(),
+            isLayout2: true
         }
 
 
-        console.log("Layout Button Test", newPostObj2);
+        console.log("Layout Button Test", newPost2);
 
-        console.log("Layout Button Test", newPostObj2);
-        newPost(newPostObj2);
+        console.log("Layout Button Test", newPost2);
+        newPost(newPost2);
     });
 
-    const newPost = function (Post) {
+    const newPost = function(Post) {
         $.post("/api/posts", Post, function () {
             console.log("Successfully added post!");
         })
     }
     //To delete the selected template
-    const deletePost = function (Post) {
+    const deletePost = function(Post) {
         $.ajax(`/api/posts/${Post}`, {
             type: "DELETE"
         }).then(() => {

@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
               len: [1]
           }
       },
-      img2: {
+      img3: {//changed this from 2 to 3
           type: DataTypes.STRING,
           allowNull: false,
           validate: {

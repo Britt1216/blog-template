@@ -1,3 +1,5 @@
+const db = require(".");
+
 module.exports = function(sequelize, DataTypes) {
   var Layout1Post = sequelize.define("Layout1Post", {
     title: {
