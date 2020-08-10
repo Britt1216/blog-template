@@ -201,41 +201,13 @@ margin-bottom:  10px;
     }
   }
   
-  
-  /* Navagation bar under image */
-  /* .topnav{
-    overflow: visible;
-    width: 100%;
- 
-  }
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  } */
+
   .display-4 {
     margin: auto;
     color: blue;
     text-align: center; 
   }
-  /* .dropdown {
-    border: none;
-    display: block;
-    position: relative;
 
-    font-size: 20px;
-    margin-left: 15px;
-    background: royalblue;
-    color: royalblue;
-    font-size: 20px; 
-  }
-  .dropdownMenuButton {
-    background: royalblue;
-    font-size: 20px;
-  } */
 
 /* Button styling */
   #create-btn1
