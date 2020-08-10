@@ -25,6 +25,7 @@ $('document').ready(function () {
         layout3Input();
     });
 
+
 //create the layout1 template
    
     const layout1Input = () => {
@@ -56,85 +57,30 @@ $('document').ready(function () {
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
 
     };
-        $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
-            event.preventDefault();
-            const new1Post = {
-                title: $("#title-input").val().trim(),
-                header1: $("#header1-input").val().trim(),
-                text1: $("#text1-input").val().trim(),
-                img1: $("#img1-input").val().trim(),
-                img2: $("#img2-input").val().trim(),
-                header2: $("#header2-input").val().trim(),
-                text2: $("#text2-input").val().trim(),
-                category: $("#category").val()
-            }
-    
-            console.log("Layout Button Test", new1Post);
-    
-            newPost1(new1Post);
-        });
+    $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
+        event.preventDefault();
+        const newPost1 = {
+            title: $("#title-input").val().trim(),
+            header1: $("#header1-input").val().trim(),
+            text1: $("#text1-input").val().trim(),
+            img1: $("#img1-input").val().trim(),
+            img2: $("#img2-input").val().trim(),
+            header2: $("#header2-input").val().trim(),
+            text2: $("#text2-input").val().trim(),
+            category: $("#category").val(),
+            selectedLayout: 'layout1',
+            isLayout1: true
+        }
 
+        console.log("Layout Button Test", newPost1);
 
-    // $("body").on("click", "#submit1-btn", function handleFormSubit(event) {
-    //     event.preventDefault();
-    //     const newPostObj1 = {
-    //         title: $("#title-input").val().trim(),
-    //         header1: $("#header1-input").val().trim(),
-    //         text1: $("#text1-input").val().trim(),
-    //         img1: $("#img1-input").val().trim(),
-    //         header2: $("#header2-input").val().trim(),
-    //         text2: $("#text2-input").val().trim(),
-    //         img2: $("#img2-input").val().trim(),
-    //         category: $("#category-input").val().trim()
-    //     }
+        newPost(newPost1);
+    });
 
-    //     console.log("Layout1 Button Test", newPostObj1);
-
-    //     newPost1(newPostObj1);
-    // });
-
-    const newPost1 = function(Post) {
-        $.post("/api/posts1", Post, function() {
-            console.log("Successfully added post to layout1!");
-        })
-    }
-
-
+    // create the Layout2 Template
     const layout2Input = () => {
-        const inputDiv = $("#input-div")
-        inputDiv.empty();
-        inputDiv.append(`<form>`);
-        inputDiv.append(`<div class="form-group">`);
-        inputDiv.append(`<label>Title</label>`);
-        inputDiv.append(`<input class="form-control" id="3title-input">`);
-        inputDiv.append(`<label>Header 1</label>`);
-        inputDiv.append(`<input class="form-control" id="3header1-input">`);
-        inputDiv.append(`<label>Img1</label>`);
-        inputDiv.append(`<input class="form-control" id="3img1-input">`);
-        inputDiv.append(`<label>Text 1</label>`);
-        inputDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Img2</label>`);
-        inputDiv.append(`<input class="form-control" id="3img2-input">`);
-        inputDiv.append(`<label>Text 2</label>`);
-        inputDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<label>Img3</label>`);
-        inputDiv.append(`<input class="form-control" id="3img3-input">`);
-        inputDiv.append(`<label>Text 3</label>`);
-        inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="3category-input">`);
-        inputDiv.append(`</div>`);
-        inputDiv.append(`</form>`);
-        inputDiv.append(`</div>`);
-        inputDiv.append(`</div>`);
-
-        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
-    }
-
-    //create the layout3 template
-    const layout3Input = () => {
-        const inputDiv = $("#input-div")
+        const inputDiv = $("#input-div");
+        
         inputDiv.empty();
         inputDiv.append(`<form>`);
         inputDiv.append(`<div class="form-group">`);
@@ -157,35 +103,87 @@ $('document').ready(function () {
         inputDiv.append(`</div>`);
         inputDiv.append(`</div>`);
 
-        inputDiv.append(`<button id="submit3-btn"> Submit </button>`);
+        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
     }
 
     $("body").on("click", "#submit2-btn", function handleFormSubit(event) {
         event.preventDefault();
-        const newPostObj2 = {
+        const newPost2 = {
             title: $("#2title-input").val().trim(),
             img1: $("#2img1-input").val().trim(),
             header1: $("#2header1-input").val().trim(),
             text1: $("#2text1-input").val().trim(),
             sideHead: $("#2header2-input").val().trim(),
             sideText: $("#2text2-input").val().trim(),
-            category: $("#2category-input").val().trim()
+            category: $("#2category-input").val().trim(),
+            selectedLayout: 'layout2',
+            isLayout2: true
         }
-
-
-        console.log("Layout Button Test", newPostObj2);
-
-        console.log("Layout Button Test", newPostObj2);
-        newPost(newPostObj2);
+        console.log("Layout Button Test", newPost2);
+        newPost(newPost2);
     });
 
-    const newPost = function (Post) {
+    //create the layout3 template
+    const layout3Input = () => {
+        const inputDiv = $("#input-div");
+
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="3title-input">`);
+        inputDiv.append(`<label>Header 1</label>`);
+        inputDiv.append(`<input class="form-control" id="3header1-input">`);
+        inputDiv.append(`<label>Img1</label>`);
+        inputDiv.append(`<input class="form-control" id="3img1-input">`);
+        inputDiv.append(`<label>Text 1</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Img2</label>`);
+        inputDiv.append(`<input class="form-control" id="3img2-input">`);
+        inputDiv.append(`<label>Text 2</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Img3</label>`);
+        inputDiv.append(`<input class="form-control" id="3img3-input">`);
+        inputDiv.append(`<label>Text 3</label>`);
+        inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Category</label>`);
+        inputDiv.append(`<input class="form-control" id="3category-input">`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit3-btn"> Submit </button>`);
+    }
+
+    $("body").on("click", "#submit3-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPost3 = {
+            title: $("#3title-input").val().trim(),
+            header1: $("#3header1-input").val().trim(),
+            img1: $("#3img1-input").val().trim(),
+            text1: $("#3text1-input").val().trim(),
+            img2: $("#3img2-input").val().trim(),
+            text2: $("#3text2-input").val().trim(),
+            img3: $("#3img3-input").val().trim(),
+            text3: $("#3text3-input").val().trim(),
+            category: $("#3category-input").val().trim(),
+            selectedLayout: 'layout3',
+            isLayout3: true
+        }
+        console.log("Layout Button Test", newPost3);
+        newPost(newPost3);
+    });
+
+    
+    //create new post
+    const newPost = function(Post) {
         $.post("/api/posts", Post, function () {
             console.log("Successfully added post!");
         })
     }
     //To delete the selected template
-    const deletePost = function (Post) {
+    const deletePost = function(Post) {
         $.ajax(`/api/posts/${Post}`, {
             type: "DELETE"
         }).then(() => {
@@ -198,7 +196,169 @@ $('document').ready(function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
         deletePost(id);
-    })
+    });
+
+    //To update the post
+    $("body").on("click", ".update-btn", function () {
+        const id = $(this).data("id")
+        const layoutVal = $(this).data("value");
+        console.log("Updated id " + id);
+        console.log("Updated data Value " + layoutVal);
+        updateDiv(id, layoutVal);
+    });
+
+    const updateDiv = (id, layout) => {
+        const updateDiv = $(`#update-div${id}`);
+        if (layout === "layout3") {
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input class="form-control" id="3title-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input class="form-control" id="3header1-input">`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input class="form-control" id="3img1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img2</label>`);
+            updateDiv.append(`<input class="form-control" id="3img2-input">`);
+            updateDiv.append(`<label>Text 2</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img3</label>`);
+            updateDiv.append(`<input class="form-control" id="3img3-input">`);
+            updateDiv.append(`<label>Text 3</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input class="form-control" id="3category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost3 = {
+                    title: $("#3title-input").val().trim(),
+                    header1: $("#3header1-input").val().trim(),
+                    img1: $("#3img1-input").val().trim(),
+                    text1: $("#3text1-input").val().trim(),
+                    img2: $("#3img2-input").val().trim(),
+                    text2: $("#3text2-input").val().trim(),
+                    img3: $("#3img3-input").val().trim(),
+                    text3: $("#3text3-input").val().trim(),
+                    category: $("#3category-input").val().trim()
+                }
+                updatePost(id, newPost3);
+            });
+        } else if (layout === "layout2") {
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input class="form-control" id="2title-input">`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input class="form-control" id="2img1-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input class="form-control" id="2header1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="2text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Side Header </label>`);
+            updateDiv.append(`<input class="form-control" id="2header2-input">`);
+            updateDiv.append(`<label>Side Text</label>`);
+            updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input class="form-control" id="2category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost2 = {
+                    title: $("#2title-input").val().trim(),
+                    img1: $("#2img1-input").val().trim(),
+                    header1: $("#2header1-input").val().trim(),
+                    text1: $("#2text1-input").val().trim(),
+                    sideHead: $("#2header2-input").val().trim(),
+                    sideText: $("#2text2-input").val().trim(),
+                    category: $("#2category-input").val().trim(),
+                    selectedLayout: 'layout2',
+                    isLayout2: true
+                }
+                updatePost(id, newPost2);
+            });
+        } else {
+            var titleText = $(`#${id}titleText`).text();
+            var header1Text = $(`#${id}header1Text`).text();
+            var text1Text = $(`#${id}text1Text`).text();
+            var img2Text = $(`#${id}img2Text`).prop('src');
+            var header2Text = $(`#${id}header2Text`).text();
+            var text2Text = $(`#${id}text2Text`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var categoryText = $(`#${id}categoryText`).text();
+           
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="title-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input value="${header1Text}" class="form-control" id="header1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="text1-input" rows="3">${text1Text}</textarea>`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input value=${img1Text} class="form-control" id="img1-input">`);
+            updateDiv.append(`<label>Header 2</label>`);
+            updateDiv.append(`<input value="${header2Text}" class="form-control" id="header2-input">`);
+            updateDiv.append(`<label>Text 2</label>`);
+            updateDiv.append(`<textarea class="form-control" id="text2-input" rows="3">${text2Text}</textarea>`);
+            updateDiv.append(`<label>Img2</label>`);
+            updateDiv.append(`<input value="${img2Text}" class="form-control" id="img2-input">`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input value="${categoryText}"class="form-control" id="category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost1 = {
+                    title: $("#title-input").val().trim(),
+                    header1: $("#header1-input").val().trim(),
+                    text1: $("#text1-input").val().trim(),
+                    img1: $("#img1-input").val().trim(),
+                    img2: $("#img2-input").val().trim(),
+                    header2: $("#header2-input").val().trim(),
+                    text2: $("#text2-input").val().trim(),
+                    category: $("#category").val(),
+                    selectedLayout: 'layout1',
+                    isLayout1: true
+                }
+                updatePost(id, newPost1);
+            });
+            
+        }
+        const updatePost = (id, post) => {
+            $.ajax({
+                method: "PUT",
+                url: `/api/update/${id}`,
+                data: post
+            }).then(() => {
+                console.log("Successfully Updated Post!");
+                window.location.href = "/";
+            });
+        }
+    }
 
     
+   
 });
