@@ -164,7 +164,7 @@ $('document').ready(function () {
             img2: $("#3img2-input").val().trim(),
             text2: $("#3text2-input").val().trim(),
             img3: $("#3img3-input").val().trim(),
-            text2: $("#3text3-input").val().trim(),
+            text3: $("#3text3-input").val().trim(),
             category: $("#3category-input").val().trim(),
             isLayout3: true
         }
