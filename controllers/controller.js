@@ -73,6 +73,18 @@ router.post("/api/posts", (req, res) => {
     });
 });
 
+router.put("/api/update/:id", (req, res) => {
+    LayoutAllPost.update(req.body, 
+        {
+            where: {
+                id: req.params.id
+            }
+        }).then(results => {
+            res.json(results);
+            res.end();
+        });
+});
+
 router.delete("/api/posts/:id", (req, res) => {
     LayoutAllPost.destroy({ where: { id: req.params.id } }).then(results => {
         console.log("deleted Successfully");

@@ -234,7 +234,25 @@ $('document').ready(function () {
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
-            updateDiv.append(`<button id="submit-changes3-btn"> Submit Changes </button>`);
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost3 = {
+                    title: $("#3title-input").val().trim(),
+                    header1: $("#3header1-input").val().trim(),
+                    img1: $("#3img1-input").val().trim(),
+                    text1: $("#3text1-input").val().trim(),
+                    img2: $("#3img2-input").val().trim(),
+                    text2: $("#3text2-input").val().trim(),
+                    img3: $("#3img3-input").val().trim(),
+                    text3: $("#3text3-input").val().trim(),
+                    category: $("#3category-input").val().trim()
+                }
+                updatePost(id, newPost3);
+            });
         } else if (layout === "layout2") {
             updateDiv.empty();
             updateDiv.append(`<form>`);
@@ -256,7 +274,25 @@ $('document').ready(function () {
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
-            updateDiv.append(`<button id="submit-changes2-btn"> Submit Changes </button>`);
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost2 = {
+                    title: $("#2title-input").val().trim(),
+                    img1: $("#2img1-input").val().trim(),
+                    header1: $("#2header1-input").val().trim(),
+                    text1: $("#2text1-input").val().trim(),
+                    sideHead: $("#2header2-input").val().trim(),
+                    sideText: $("#2text2-input").val().trim(),
+                    category: $("#2category-input").val().trim(),
+                    selectedLayout: 'layout2',
+                    isLayout2: true
+                }
+                updatePost(id, newPost2);
+            });
         } else {
             updateDiv.empty();
             updateDiv.append(`<form>`);
@@ -280,10 +316,40 @@ $('document').ready(function () {
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
-            updateDiv.append(`<button id="submit-changes1-btn"> Submit Changes </button>`);
-        }
-        
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
 
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost1 = {
+                    title: $("#title-input").val().trim(),
+                    header1: $("#header1-input").val().trim(),
+                    text1: $("#text1-input").val().trim(),
+                    img1: $("#img1-input").val().trim(),
+                    img2: $("#img2-input").val().trim(),
+                    header2: $("#header2-input").val().trim(),
+                    text2: $("#text2-input").val().trim(),
+                    category: $("#category").val(),
+                    selectedLayout: 'layout1',
+                    isLayout1: true
+                }
+                updatePost(id, newPost1);
+            });
+            
+        }
+        const updatePost = (id, post) => {
+            $.ajax({
+                method: "PUT",
+                url: `/api/update/${id}`,
+                data: post
+            }).then(() => {
+                console.log("Successfully Updated Post!");
+                window.location.href = "/";
+            });
+        }
     }
+
     
+   
 });
