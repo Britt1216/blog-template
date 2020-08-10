@@ -98,15 +98,15 @@ router.get("/", (req, res) => {
         res.status(500).json(err.message);
     });
 });
-router.get("/:category", (req, res) => {
+router.get("/category/:category", (req, res) => {
     LayoutAllPost.findAll({
         order: [["id", "asc"]],
         raw: true,
         where: { 
-            Category: req.params.category 
+            category: req.params.category 
         }    
 }).then(posts => {
-    res.status(200)
+    res.render("index", {post: posts})
 }).catch(err => {
     console.log(err.message);
     res.status(500).json(err.message);
