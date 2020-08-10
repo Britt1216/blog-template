@@ -36,4 +36,8 @@ $(document).ready(function() {
           console.log(err);
         });
     }
+
+    $("#signin").on("click", function () {
+      console.log("Now on Post Page");
+  });
   });
