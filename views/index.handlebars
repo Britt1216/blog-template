@@ -19,7 +19,9 @@
                         <ul>
                             <li>Catagory
                                 <ul class="drop-menu menu-#{i}">
-                                    <li>Jared</li>
+                                   {{#each post}} 
+                                   <li><a class="dropdown-item" href="#">{{this.category}}</a></li> 
+                                   {{/each}}
                                     <li>is</li>
                                     <li>realy</li>
                                     <li>good</li>
