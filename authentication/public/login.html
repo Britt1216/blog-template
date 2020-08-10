@@ -8,6 +8,70 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
+<style>
+
+  body {
+    background-color: green;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+      
+  } 
+
+
+</style>
+
+
+<style>
+  body {
+    background-color: goldenrod;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+  }        
+  .jumbotron {
+    background-image: url('blogging_image.jpg');
+  }
+
+  .row {
+    margin: 10px 0;
+  }
+
+  pre {
+    margin: 0 0 10px 0;
+    min-height: 300px;
+  }
+
+  code {
+    min-height: 300px;
+  }
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  code span {
+    color: red;
+  }
+
+  code details {
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+  code details p {
+    margin: 5px 0 0 0;
+  }
+
+  code details.error {
+    background: rgba(255, 0, 0, 0.1);
+  }
+
+  #clear-console {
+    cursor: pointer;
+  }
+</style>
 
 <body>
   <nav class="navbar navbar-default">
@@ -29,7 +93,7 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
-          <button type="submit" class="btn btn-default">Login</button>
+          <button type="submit" class="btn btn-default" href="./js./blogInputs.js">Login</button>
         </form>
         <br />
         <p>Or sign up <a href="signup.html">here</a></p>
