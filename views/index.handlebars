@@ -41,6 +41,7 @@
                     <p>ID: {{this.id}} - - - - - </p>
                     <p> Category: {{this.category}}</p>
                     <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
                     <h3 class="row"> {{title}} </h3>
 
                     <div class="row">
@@ -68,6 +69,9 @@
                         </div>
                     </div>
                 </ul>
+                <div class="row" id="update-div{{this.id}}">
+                    {{!-- update div generates here  --}}
+                </div>
             {{/if}}
 
             {{#if isLayout2}}
@@ -75,6 +79,7 @@
                     <p>ID: {{this.id}} - - - - - </p>
                     <p> Category: {{this.category}}</p>
                     <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
                     <h3 class="row"> {{this.title}} </h3>
 
                     <div class="row">
@@ -98,6 +103,9 @@
 
                     </div>
                 </ul>
+                <div class="row" id="update-div{{this.id}}">
+                    {{!-- update div generates here  --}}
+                </div>
             {{/if}}
 
             {{#if isLayout3}}
@@ -105,6 +113,7 @@
                     <p>ID: {{this.id}} - - - - - </p>
                     <p> Category: {{this.category}}</p>
                     <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
                     <h3 class="row"> {{this.title}} </h3>
                     <div class="row">
                         <h6 class="row"> {{this.header1}}</h6>
@@ -132,9 +141,11 @@
                                 <p>{{this.text3}}</p>
                             </div>
                         </div>
-                    </div>
-                        
+                    </div>   
                 </ul>
+                <div class="row" id="update-div{{this.id}}">
+                    {{!-- update div generates here  --}}
+                </div>
             {{/if}}
         {{/each}}
 

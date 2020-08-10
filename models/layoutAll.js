@@ -91,6 +91,10 @@ module.exports = function(sequelize, DataTypes) {
     isLayout3:
     {
         type: DataTypes.BOOLEAN
+    },
+    selectedLayout:
+    {
+        type: DataTypes.STRING
     }
   });
   return LayoutAllPost;

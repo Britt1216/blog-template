@@ -68,6 +68,7 @@ $('document').ready(function () {
             header2: $("#header2-input").val().trim(),
             text2: $("#text2-input").val().trim(),
             category: $("#category").val(),
+            selectedLayout: 'layout1',
             isLayout1: true
         }
 
@@ -115,6 +116,7 @@ $('document').ready(function () {
             sideHead: $("#2header2-input").val().trim(),
             sideText: $("#2text2-input").val().trim(),
             category: $("#2category-input").val().trim(),
+            selectedLayout: 'layout2',
             isLayout2: true
         }
         console.log("Layout Button Test", newPost2);
@@ -166,6 +168,7 @@ $('document').ready(function () {
             img3: $("#3img3-input").val().trim(),
             text3: $("#3text3-input").val().trim(),
             category: $("#3category-input").val().trim(),
+            selectedLayout: 'layout3',
             isLayout3: true
         }
         console.log("Layout Button Test", newPost3);
@@ -193,7 +196,94 @@ $('document').ready(function () {
         const id = $(this).data("id")
         console.log("Deleted id " + id);
         deletePost(id);
-    })
+    });
 
+    //To update the post
+    $("body").on("click", ".update-btn", function () {
+        const id = $(this).data("id")
+        const layoutVal = $(this).data("value");
+        console.log("Updated id " + id);
+        console.log("Updated data Value " + layoutVal);
+        updateDiv(id, layoutVal);
+    });
+
+    const updateDiv = (id, layout) => {
+        const updateDiv = $(`#update-div${id}`);
+        if (layout === "layout3") {
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input class="form-control" id="3title-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input class="form-control" id="3header1-input">`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input class="form-control" id="3img1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img2</label>`);
+            updateDiv.append(`<input class="form-control" id="3img2-input">`);
+            updateDiv.append(`<label>Text 2</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img3</label>`);
+            updateDiv.append(`<input class="form-control" id="3img3-input">`);
+            updateDiv.append(`<label>Text 3</label>`);
+            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input class="form-control" id="3category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button id="submit-changes3-btn"> Submit Changes </button>`);
+        } else if (layout === "layout2") {
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input class="form-control" id="2title-input">`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input class="form-control" id="2img1-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input class="form-control" id="2header1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="2text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Side Header </label>`);
+            updateDiv.append(`<input class="form-control" id="2header2-input">`);
+            updateDiv.append(`<label>Side Text</label>`);
+            updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input class="form-control" id="2category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button id="submit-changes2-btn"> Submit Changes </button>`);
+        } else {
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input class="form-control" id="title-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input class="form-control" id="header1-input">`);
+            updateDiv.append(`<label>Text 1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input class="form-control" id="img1-input">`);
+            updateDiv.append(`<label>Header 2</label>`);
+            updateDiv.append(`<input class="form-control" id="header2-input">`);
+            updateDiv.append(`<label>Text 2</label>`);
+            updateDiv.append(`<textarea class="form-control" id="text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<label>Img2</label>`);
+            updateDiv.append(`<input class="form-control" id="img2-input">`);
+            updateDiv.append(`<label>Category</label>`);
+            updateDiv.append(`<input class="form-control" id="category-input">`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button id="submit-changes1-btn"> Submit Changes </button>`);
+        }
+        
+
+    }
     
 });
