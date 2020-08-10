@@ -2,9 +2,10 @@
     <h1> Welcome to your Blog! </h1>
     <a href="/post"><button type="button" class="btn btn-secondary">Create Post</button></a>
     <div class="dropdown">
-      
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Category</button>
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Category</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Category1</a>
             <a class="dropdown-item" href="#">Category2</a>
@@ -14,12 +15,12 @@
 </div>
 
 
-<div class="container">
+<div class="container" id="layout1st">
     {{#each Layout1Post}}
     <div class='row' id='title'>
         <h1>{{title}}</h1>
     </div>
-    <div class="row">
+    <div class="row" id="layout1st">
         <div class='col-md-5' id='layout1-textbox1'>
             <h2>{{header1}}</h2>
             <p>{{text1}}</p>
@@ -29,11 +30,11 @@
         </div>
     </div>
     <div class='row'>
-        <div class='col-md-5'id='layout1-img2'>
+        <div class='col-md-5' id='layout1-img2'>
             <img src={{img2}}>
         </div>
         <div class='col-md-5' id='layout1-textbox2'>
-             <h2>{{header2}}</h2>
+            <h2>{{header2}}</h2>
             <p>{{text2}}</p>
         </div>
     </div>
