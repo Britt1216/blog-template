@@ -101,7 +101,37 @@ $('document').ready(function () {
 
 
     const layout2Input = () => {
-        const inputDiv = $("#input-div")
+        const inputDiv = $("#input-div");
+        
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="2title-input">`);
+        inputDiv.append(`<label>Img1</label>`);
+        inputDiv.append(`<input class="form-control" id="2img1-input">`);
+        inputDiv.append(`<label>Header 1</label>`);
+        inputDiv.append(`<input class="form-control" id="2header1-input">`);
+        inputDiv.append(`<label>Text 1</label>`);
+        inputDiv.append(`<textarea class="form-control" id="2text1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Side Header </label>`);
+        inputDiv.append(`<input class="form-control" id="2header2-input">`);
+        inputDiv.append(`<label>Side Text</label>`);
+        inputDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Category</label>`);
+        inputDiv.append(`<input class="form-control" id="2category-input">`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
+    }
+
+    //create the layout3 template
+    const layout3Input = () => {
+        const inputDiv = $("#input-div");
+
         inputDiv.empty();
         inputDiv.append(`<form>`);
         inputDiv.append(`<div class="form-group">`);
@@ -124,34 +154,6 @@ $('document').ready(function () {
         inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
         inputDiv.append(`<label>Category</label>`);
         inputDiv.append(`<input class="form-control" id="3category-input">`);
-        inputDiv.append(`</div>`);
-        inputDiv.append(`</form>`);
-        inputDiv.append(`</div>`);
-        inputDiv.append(`</div>`);
-
-        inputDiv.append(`<button id="submit2-btn"> Submit </button>`);
-    }
-
-    //create the layout3 template
-    const layout3Input = () => {
-        const inputDiv = $("#input-div")
-        inputDiv.empty();
-        inputDiv.append(`<form>`);
-        inputDiv.append(`<div class="form-group">`);
-        inputDiv.append(`<label>Title</label>`);
-        inputDiv.append(`<input class="form-control" id="2title-input">`);
-        inputDiv.append(`<label>Img1</label>`);
-        inputDiv.append(`<input class="form-control" id="2img1-input">`);
-        inputDiv.append(`<label>Header 1</label>`);
-        inputDiv.append(`<input class="form-control" id="2header1-input">`);
-        inputDiv.append(`<label>Text 1</label>`);
-        inputDiv.append(`<textarea class="form-control" id="2text1-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Side Header </label>`);
-        inputDiv.append(`<input class="form-control" id="2header2-input">`);
-        inputDiv.append(`<label>Side Text</label>`);
-        inputDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="2category-input">`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
