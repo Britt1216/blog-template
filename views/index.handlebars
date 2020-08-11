@@ -43,9 +43,10 @@
         <ul class="row" id="layoutcon">
             <div class="row" id="layoutbtns">
                 <p>ID: {{this.id}} - - - - - </p>
-                <p id="{{this.id}}categoryText"> Category: {{this.category}}</p>
-                <button class="delete-btn" data-id={{this.id}}>Delete</button>
-                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
+                <p class="categoryH" id="{{this.id}}categoryText"> Category: {{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete<span></span></button>
+                <button class="update-btn" data-id={{this.id}}
+                    data-value="{{this.selectedLayout}}">Update<span></span></button>
             </div>
             <h3 class="row" id="{{this.id}}titleText"> {{title}} </h3>
 
@@ -83,7 +84,7 @@
         <ul class="row" id="layoutcon">
             <div class="row" id="layoutbtns">
                 <p>ID: {{this.id}} - - - - - </p>
-                <p> Category: {{this.category}}</p>
+                <p class="categoryH"> Category: {{this.category}}</p>
                 <button class="delete-btn" data-id={{this.id}}>Delete</button>
                 <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
                 <h3 class="row"> {{this.title}} </h3>
@@ -118,7 +119,7 @@
         <ul class="row" id="layoutcon">
             <div class="row" id="layoutbtns">
                 <p>ID: {{this.id}} - - - - - </p>
-                <p> Category: {{this.category}}</p>
+                <p class="categoryH"> Category: {{this.category}}</p>
                 <button class="delete-btn" data-id={{this.id}}>Delete</button>
                 <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
                 <h3 class="row"> {{this.title}} </h3>
