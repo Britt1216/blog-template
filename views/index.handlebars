@@ -199,6 +199,67 @@
             {{!-- update div generates here  --}}
         </div>
         {{/if}}
+
+        {{#if isLayout5}}
+        <ul class="row" id="layoutcon">
+            <div class="row" id="layoutbtns">
+                <p>ID: {{this.id}} - - - - - </p>
+                <p>Cateory: - </p>
+                <p id="{{this.id}}categoryText">{{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete<span></span></button>
+                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update<span></span></button>
+                <h3 class="row" id="{{this.id}}titleText"> {{this.title}} </h3>
+
+                <div class="row">
+                    <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}} </h6>
+                        <div class="row">
+                            <img class="img1L2" id="{{this.id}}img1Text" src="{{this.img1}}" />
+                        </div>
+                        <div class="row">
+                            <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}}</h6>
+                        </div>
+                        <div class="row">
+                            <p class="row" id="{{this.id}}text1Text">
+                                {{this.text1}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <div class="row" id="update-div{{this.id}}">
+            {{!-- update div generates here  --}}
+        </div>
+        {{/if}}
+        {{#if isLayout6}}
+        <ul class="row" id="layoutcon">
+            <div class="row" id="layoutbtns">
+                <p>ID: {{this.id}} - - - - - </p>
+                <p>Cateory: - </p>
+                <p id="{{this.id}}categoryText">{{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete<span></span></button>
+                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update<span></span></button>
+                <h3 class="row" id="{{this.id}}titleText"> {{this.title}} </h3>
+
+                <div class="row">
+                    <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}} </h6>
+                        <div class="column-md-8">
+                            <img class="img1L2" id="{{this.id}}img1Text" src="{{this.img1}}" />
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="row" id="{{this.id}}sideHead1Text"> {{this.sideHead}}</h6>
+                            <p class="row" id="{{this.id}}sideText1Text">
+                                {{this.sideText}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <div class="row" id="update-div{{this.id}}">
+            {{!-- update div generates here  --}}
+        </div>
+        {{/if}}
         {{/each}}
 
     </div>
