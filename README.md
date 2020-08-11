@@ -168,10 +168,3 @@
  
 </p>
 
-* Creating Layouts
-
-1. 
-
-* Creating the Authentication Page
-
-1. 
