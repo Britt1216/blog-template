@@ -47,14 +47,23 @@ $('document').ready(function () {
         inputDiv.append(`<textarea class="form-control" id="text2-input" rows="3"></textarea>`);
         inputDiv.append(`<label>Img2</label>`);
         inputDiv.append(`<input class="form-control" id="img2-input">`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</div>`);
 
         inputDiv.append(`<button id="submit1-btn"> Submit </button>`)
+
+        
+              
 
     };
     $("body").on("click", "#submit1-btn", function handleFormSubmit(event) {
@@ -67,7 +76,7 @@ $('document').ready(function () {
             img2: $("#img2-input").val().trim(),
             header2: $("#header2-input").val().trim(),
             text2: $("#text2-input").val().trim(),
-            category: $("#category").val(),
+            category: $("#category-input").val(),
             selectedLayout: 'layout1',
             isLayout1: true
         }
@@ -96,8 +105,14 @@ $('document').ready(function () {
         inputDiv.append(`<input class="form-control" id="2header2-input">`);
         inputDiv.append(`<label>Side Text</label>`);
         inputDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="2category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="2category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+      </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -115,7 +130,7 @@ $('document').ready(function () {
             text1: $("#2text1-input").val().trim(),
             sideHead: $("#2header2-input").val().trim(),
             sideText: $("#2text2-input").val().trim(),
-            category: $("#2category-input").val().trim(),
+            category: $("#2category-input").val(),
             selectedLayout: 'layout2',
             isLayout2: true
         }
@@ -146,8 +161,14 @@ $('document').ready(function () {
         inputDiv.append(`<input class="form-control" id="3img3-input">`);
         inputDiv.append(`<label>Text 3</label>`);
         inputDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-        inputDiv.append(`<label>Category</label>`);
-        inputDiv.append(`<input class="form-control" id="3category-input">`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="3category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+        </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -167,7 +188,7 @@ $('document').ready(function () {
             text2: $("#3text2-input").val().trim(),
             img3: $("#3img3-input").val().trim(),
             text3: $("#3text3-input").val().trim(),
-            category: $("#3category-input").val().trim(),
+            category: $("#3category-input").val(),
             selectedLayout: 'layout3',
             isLayout3: true
         }
@@ -210,27 +231,43 @@ $('document').ready(function () {
     const updateDiv = (id, layout) => {
         const updateDiv = $(`#update-div${id}`);
         if (layout === "layout3") {
+            var titleText = $(`#${id}titleText`).text();
+            var header1Text = $(`#${id}header1Text`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var text1Text = $(`#${id}text1Text`).text();
+            var img2Text = $(`#${id}img2Text`).prop('src');
+            var text2Text = $(`#${id}text2Text`).text();
+            var img3Text = $(`#${id}img3Text`).prop('src');
+            var text3Text = $(`#${id}text3Text`).text();
+            
+
             updateDiv.empty();
             updateDiv.append(`<form>`);
             updateDiv.append(`<div class="form-group">`);
             updateDiv.append(`<label>Title</label>`);
-            updateDiv.append(`<input class="form-control" id="3title-input">`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="3title-input">`);
             updateDiv.append(`<label>Header 1</label>`);
-            updateDiv.append(`<input class="form-control" id="3header1-input">`);
+            updateDiv.append(`<input value="${header1Text}" class="form-control" id="3header1-input">`);
             updateDiv.append(`<label>Img1</label>`);
-            updateDiv.append(`<input class="form-control" id="3img1-input">`);
+            updateDiv.append(`<input value="${img1Text}" class="form-control" id="3img1-input">`);
             updateDiv.append(`<label>Text 1</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3">${text1Text}</textarea>`);
             updateDiv.append(`<label>Img2</label>`);
-            updateDiv.append(`<input class="form-control" id="3img2-input">`);
+            updateDiv.append(`<input value="${img2Text}" class="form-control" id="3img2-input">`);
             updateDiv.append(`<label>Text 2</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3">${text2Text}</textarea>`);
             updateDiv.append(`<label>Img3</label>`);
-            updateDiv.append(`<input class="form-control" id="3img3-input">`);
+            updateDiv.append(`<input value="${img3Text}" class="form-control" id="3img3-input">`);
             updateDiv.append(`<label>Text 3</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input class="form-control" id="3category-input">`);
+            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3">${text3Text}</textarea>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="3category-input">
+            <option value="Personal">Personal</option>
+            <option value="Review">Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -249,28 +286,42 @@ $('document').ready(function () {
                     text2: $("#3text2-input").val().trim(),
                     img3: $("#3img3-input").val().trim(),
                     text3: $("#3text3-input").val().trim(),
-                    category: $("#3category-input").val().trim()
+                    category: $("#3category-input").val()
                 }
                 updatePost(id, newPost3);
             });
         } else if (layout === "layout2") {
+
+            var titleText = $(`#${id}titleText`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var header1Text = $(`#${id}header1Text`).text();
+            var text1Text = $(`#${id}text1Text`).text();;
+            var sideHead1Text = $(`#${id}sideHead1Text`).text();
+            var sideText1Text = $(`#${id}sideText1Text`).text();
+
             updateDiv.empty();
             updateDiv.append(`<form>`);
             updateDiv.append(`<div class="form-group">`);
             updateDiv.append(`<label>Title</label>`);
-            updateDiv.append(`<input class="form-control" id="2title-input">`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="2title-input">`);
             updateDiv.append(`<label>Img1</label>`);
-            updateDiv.append(`<input class="form-control" id="2img1-input">`);
+            updateDiv.append(`<input value="${img1Text}" class="form-control" id="2img1-input">`);
             updateDiv.append(`<label>Header 1</label>`);
-            updateDiv.append(`<input class="form-control" id="2header1-input">`);
+            updateDiv.append(`<input value="${header1Text}" class="form-control" id="2header1-input">`);
             updateDiv.append(`<label>Text 1</label>`);
-            updateDiv.append(`<textarea class="form-control" id="2text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="2text1-input" rows="3">${text1Text}</textarea>`);
             updateDiv.append(`<label>Side Header </label>`);
-            updateDiv.append(`<input class="form-control" id="2header2-input">`);
+            updateDiv.append(`<input value="${sideHead1Text}" class="form-control" id="2header2-input">`);
             updateDiv.append(`<label>Side Text</label>`);
-            updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input class="form-control" id="2category-input">`);
+            updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3">${sideText1Text}</textarea>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="2category-input">
+            <option value="Personal">Personal</option>
+            <option value="Review">Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -287,7 +338,7 @@ $('document').ready(function () {
                     text1: $("#2text1-input").val().trim(),
                     sideHead: $("#2header2-input").val().trim(),
                     sideText: $("#2text2-input").val().trim(),
-                    category: $("#2category-input").val().trim(),
+                    category: $("#2category-input").val(),
                     selectedLayout: 'layout2',
                     isLayout2: true
                 }
@@ -301,7 +352,6 @@ $('document').ready(function () {
             var header2Text = $(`#${id}header2Text`).text();
             var text2Text = $(`#${id}text2Text`).text();
             var img1Text = $(`#${id}img1Text`).prop('src');
-            var categoryText = $(`#${id}categoryText`).text();
            
             updateDiv.empty();
             updateDiv.append(`<form>`);
@@ -320,8 +370,14 @@ $('document').ready(function () {
             updateDiv.append(`<textarea class="form-control" id="text2-input" rows="3">${text2Text}</textarea>`);
             updateDiv.append(`<label>Img2</label>`);
             updateDiv.append(`<input value="${img2Text}" class="form-control" id="img2-input">`);
-            updateDiv.append(`<label>Category</label>`);
-            updateDiv.append(`<input value="${categoryText}"class="form-control" id="category-input">`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="category-input">
+            <option value="Personal">Personal</option>
+            <option value="Review">Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -339,7 +395,7 @@ $('document').ready(function () {
                     img2: $("#img2-input").val().trim(),
                     header2: $("#header2-input").val().trim(),
                     text2: $("#text2-input").val().trim(),
-                    category: $("#category").val(),
+                    category: $("#category-input").val(),
                     selectedLayout: 'layout1',
                     isLayout1: true
                 }

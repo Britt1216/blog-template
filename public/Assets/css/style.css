@@ -240,7 +240,7 @@ margin-bottom:  10px;
     height: 100%;
     background: transparent;
     z-index: -1;
-    border: 5px solid royalblue;
+    border: 5px solid #7fe3d2;
 }
 #create-btn1 span::before {
     content: "";
@@ -256,7 +256,7 @@ margin-bottom:  10px;
 #create-btn1:hover span::before, #create-btn1:focus span::before{
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
-    background: royalblue;
+    background: #7FE3D2;
 }
 #create-btn1:hover, #create-btn1:focus{
     color: rgb(3, 3, 3);
