@@ -250,14 +250,14 @@ $('document').ready(function () {
             updateDiv.append(`<input class="form-control" id="3img3-input">`);
             updateDiv.append(`<label>Text 3</label>`);
             updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
-            inputDiv.append(`<label for="category">Select Category:</label>`);
-        inputDiv.append(`<select class="custom-select" id="3category-input">
-        <option value="Personal">Personal</option>
-        <option value="Product Review">Product Review</option>
-        <option value="Political">Political</option>
-        <option value="Animals">Animals</option>
-        <option value="Beauty">Beauty</option>
-      </select>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="3category-input">
+            <option value="Personal">Personal</option>
+            <option value="Product Review">Product Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -296,14 +296,14 @@ $('document').ready(function () {
             updateDiv.append(`<input class="form-control" id="2header2-input">`);
             updateDiv.append(`<label>Side Text</label>`);
             updateDiv.append(`<textarea class="form-control" id="2text2-input" rows="3"></textarea>`);
-            inputDiv.append(`<label for="category">Select Category:</label>`);
-        inputDiv.append(`<select class="custom-select" id="2category-input">
-        <option value="Personal">Personal</option>
-        <option value="Product Review">Product Review</option>
-        <option value="Political">Political</option>
-        <option value="Animals">Animals</option>
-        <option value="Beauty">Beauty</option>
-      </select>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="2category-input">
+            <option value="Personal">Personal</option>
+            <option value="Product Review">Product Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -353,14 +353,14 @@ $('document').ready(function () {
             updateDiv.append(`<textarea class="form-control" id="text2-input" rows="3">${text2Text}</textarea>`);
             updateDiv.append(`<label>Img2</label>`);
             updateDiv.append(`<input value="${img2Text}" class="form-control" id="img2-input">`);
-            inputDiv.append(`<label for="category">Select Category:</label>`);
-            inputDiv.append(`<select class="custom-select" id="category-input">
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="${categoryText}" id="category-input">
             <option value="Personal">Personal</option>
             <option value="Product Review">Product Review</option>
             <option value="Political">Political</option>
             <option value="Animals">Animals</option>
             <option value="Beauty">Beauty</option>
-          </select>`);
+            </select>`);
             updateDiv.append(`</div>`);
             updateDiv.append(`</form>`);
 
@@ -378,11 +378,13 @@ $('document').ready(function () {
                     img2: $("#img2-input").val().trim(),
                     header2: $("#header2-input").val().trim(),
                     text2: $("#text2-input").val().trim(),
-                    category: $("#category").val(),
+                    category: $("#category-input").val().trim(),
                     selectedLayout: 'layout1',
                     isLayout1: true
                 }
                 updatePost(id, newPost1);
+                console.log("category test" + newPost1.category);
+                console.log("categoryText test" + categoryText);
             });
             
         }
