@@ -130,7 +130,7 @@ $('document').ready(function () {
             text1: $("#2text1-input").val().trim(),
             sideHead: $("#2header2-input").val().trim(),
             sideText: $("#2text2-input").val().trim(),
-            category: $("#2category-input").val().trim(),
+            category: $("#2category-input").val(),
             selectedLayout: 'layout2',
             isLayout2: true
         }
@@ -188,7 +188,7 @@ $('document').ready(function () {
             text2: $("#3text2-input").val().trim(),
             img3: $("#3img3-input").val().trim(),
             text3: $("#3text3-input").val().trim(),
-            category: $("#3category-input").val().trim(),
+            category: $("#3category-input").val(),
             selectedLayout: 'layout3',
             isLayout3: true
         }
@@ -276,7 +276,7 @@ $('document').ready(function () {
                     text2: $("#3text2-input").val().trim(),
                     img3: $("#3img3-input").val().trim(),
                     text3: $("#3text3-input").val().trim(),
-                    category: $("#3category-input").val().trim()
+                    category: $("#3category-input").val()
                 }
                 updatePost(id, newPost3);
             });
@@ -320,7 +320,7 @@ $('document').ready(function () {
                     text1: $("#2text1-input").val().trim(),
                     sideHead: $("#2header2-input").val().trim(),
                     sideText: $("#2text2-input").val().trim(),
-                    category: $("#2category-input").val().trim(),
+                    category: $("#2category-input").val(),
                     selectedLayout: 'layout2',
                     isLayout2: true
                 }
@@ -378,7 +378,7 @@ $('document').ready(function () {
                     img2: $("#img2-input").val().trim(),
                     header2: $("#header2-input").val().trim(),
                     text2: $("#text2-input").val().trim(),
-                    category: $("#category").val(),
+                    category: $("#category-input").val(),
                     selectedLayout: 'layout1',
                     isLayout1: true
                 }
