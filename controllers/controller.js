@@ -89,7 +89,7 @@ router.delete("/api/posts/:id", (req, res) => {
 
 router.get("/", (req, res) => {
     LayoutAllPost.findAll({
-        order: [["id", "asc"]],
+        order: [["id", "desc"]],
         raw: true
     }).then(posts => {
         res.render("index", {post: posts})
