@@ -392,9 +392,9 @@ margin-bottom:  10px;
 
 #layoutcon {
   display: flex;
-background-color: cornsilk;
-border: 10px solid black;
-text-align: center;
+  background-color: cornsilk;
+  border: 10px solid black;
+  text-align: center;
 }
 #layoutbtns {
 justify-content: center;

@@ -100,7 +100,7 @@ router.get("/", (req, res) => {
 });
 router.get("/category/:category", (req, res) => {
     LayoutAllPost.findAll({
-        order: [["id", "asc"]],
+        order: [["id", "desc"]],
         raw: true,
         where: { 
             category: req.params.category 
