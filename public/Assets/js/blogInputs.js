@@ -35,6 +35,11 @@ $('document').ready(function () {
         layout5Input();
     });
 
+    $("#layout6-btn").on("click", function () {
+        console.log("Layout6 TEST");
+        layout6Input();
+    });
+
 
 //create the layout1 template
    
@@ -64,7 +69,7 @@ $('document').ready(function () {
         <option value="Political">Political</option>
         <option value="Animals">Animals</option>
         <option value="Beauty">Beauty</option>
-      </select>`);
+        </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -206,7 +211,7 @@ $('document').ready(function () {
         newPost(newPost3);
     });
 
-    //create the layout3 template
+    //create the layout4 template
     const layout4Input = () => {
         const inputDiv = $("#input-div");
 
@@ -298,6 +303,51 @@ $('document').ready(function () {
         newPost(newPost5);
     });
 
+    // create the Layout6 Template
+    const layout6Input = () => {
+        const inputDiv = $("#input-div");
+        
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="6title-input">`);
+        inputDiv.append(`<label>Img1</label>`);
+        inputDiv.append(`<input class="form-control" id="6img1-input">`);
+        inputDiv.append(`<label>Side Header </label>`);
+        inputDiv.append(`<input class="form-control" id="6sideHead1-input">`);
+        inputDiv.append(`<label>Side Text</label>`);
+        inputDiv.append(`<textarea class="form-control" id="6sideText1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="6category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+        </select>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit6-btn"> Submit </button>`);
+    }
+
+    $("body").on("click", "#submit6-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPost6 = {
+            title: $("#6title-input").val().trim(),
+            img1: $("#6img1-input").val().trim(),
+            sideHead: $("#6sideHead1-input").val().trim(),
+            sideText: $("#6sideText1-input").val().trim(),
+            category: $("#6category-input").val(),
+            selectedLayout: 'layout6',
+            isLayout6: true
+        }
+        console.log("Layout Button Test", newPost6);
+        newPost(newPost6);
+    });
 
     
     //create new post
@@ -333,7 +383,51 @@ $('document').ready(function () {
 
     const updateDiv = (id, layout) => {
         const updateDiv = $(`#update-div${id}`);
-        if (layout === "layout5") {
+        if (layout === "layout6") {
+            var titleText = $(`#${id}titleText`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var sideHead1Text = $(`#${id}sideHead1Text`).text();
+            var sideText1Text = $(`#${id}sideText1Text`).text();
+            
+            
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="6title-input">`);
+            updateDiv.append(`<label>Img1</label>`);
+            updateDiv.append(`<input value="${img1Text}" class="form-control" id="6img1-input">`);
+            updateDiv.append(`<label>Side Header </label>`);
+            updateDiv.append(`<input value="${sideHead1Text}" class="form-control" id="6sideHead1-input">`);
+            updateDiv.append(`<label>Side Text</label>`);
+            updateDiv.append(`<textarea class="form-control" id="6sideText1-input" rows="3">${sideText1Text}</textarea>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="6category-input">
+            <option value="Personal">Personal</option>
+            <option value="Review">Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost6 = {
+                    title: $("#6title-input").val().trim(),
+                    sideHead: $("#6sideHead1-input").val().trim(),
+                    sideText: $("#6sideText1-input").val().trim(),
+                    img1: $("#6img1-input").val().trim(),
+                    category: $("#6category-input").val()
+                }
+                updatePost(id, newPost6);
+            }); 
+        } else if (layout === "layout5") {
             var titleText = $(`#${id}titleText`).text();
             var header1Text = $(`#${id}header1Text`).text();
             var text1Text = $(`#${id}text1Text`).text();
