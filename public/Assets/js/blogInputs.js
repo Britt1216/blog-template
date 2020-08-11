@@ -253,7 +253,7 @@ $('document').ready(function () {
             updateDiv.append(`<label for="category">Select Category:</label>`);
             updateDiv.append(`<select class="custom-select" id="3category-input">
             <option value="Personal">Personal</option>
-            <option value="Product Review">Product Review</option>
+            <option value="Review">Review</option>
             <option value="Political">Political</option>
             <option value="Animals">Animals</option>
             <option value="Beauty">Beauty</option>
@@ -299,7 +299,7 @@ $('document').ready(function () {
             updateDiv.append(`<label for="category">Select Category:</label>`);
             updateDiv.append(`<select class="custom-select" id="2category-input">
             <option value="Personal">Personal</option>
-            <option value="Product Review">Product Review</option>
+            <option value="Review">Review</option>
             <option value="Political">Political</option>
             <option value="Animals">Animals</option>
             <option value="Beauty">Beauty</option>
@@ -356,7 +356,7 @@ $('document').ready(function () {
             updateDiv.append(`<label for="category">Select Category:</label>`);
             updateDiv.append(`<select class="${categoryText}" id="category-input">
             <option value="Personal">Personal</option>
-            <option value="Product Review">Product Review</option>
+            <option value="Review">Review</option>
             <option value="Political">Political</option>
             <option value="Animals">Animals</option>
             <option value="Beauty">Beauty</option>

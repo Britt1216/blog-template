@@ -107,6 +107,7 @@ router.get("/category/:category", (req, res) => {
         }    
 }).then(posts => {
     res.render("index", {post: posts})
+    console.log(req.params.category);
 }).catch(err => {
     console.log(err.message);
     res.status(500).json(err.message);
