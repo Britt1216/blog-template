@@ -2,8 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const { Layout1Post } = require("../models/");
-const { Layout2Post } = require("../models/");
+
 const { LayoutAllPost } = require("../models/");
 
 // router.get("/", (req, res) => {
@@ -54,13 +53,9 @@ const { LayoutAllPost } = require("../models/");
 
 
 //using layoutAllPost model
-router.get("/", (req, res) => {
-    LayoutAllPost.findAll({ raw: true }).then(results => {
-        res.render("index", { 
-            post: results
-            });
-    });
-});
+
+
+
 
 router.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "../authentication/public/login.html"));
@@ -96,6 +91,32 @@ router.delete("/api/posts/:id", (req, res) => {
     }).then(post => {
         res.end();
     });
+});
+
+router.get("/", (req, res) => {
+    LayoutAllPost.findAll({
+        order: [["id", "asc"]],
+        raw: true
+    }).then(posts => {
+        res.render("index", {post: posts})
+    }).catch(err => {
+        console.log(err.message);
+        res.status(500).json(err.message);
+    });
+});
+router.get("/category/:category", (req, res) => {
+    LayoutAllPost.findAll({
+        order: [["id", "asc"]],
+        raw: true,
+        where: { 
+            category: req.params.category 
+        }    
+}).then(posts => {
+    res.render("index", {post: posts})
+}).catch(err => {
+    console.log(err.message);
+    res.status(500).json(err.message);
+});
 });
 
 module.exports = router;

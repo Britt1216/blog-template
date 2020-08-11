@@ -17,14 +17,15 @@
                             Post<span></span></button></a>
                     <nav>
                         <ul>
-                            <li>Catagory
+                            <li>Category
                                 <ul class="drop-menu menu-#{i}">
-                                    <li>Jared</li>
-                                    <li>is</li>
-                                    <li>realy</li>
-                                    <li>good</li>
-                                    <li>at</li>
-                                    <li>css</li>
+                                   <li><a class="dropdown-item" href="/">See All</a></li>
+                                   <li><a class="dropdown-item" href="/category/Personal">Personal</a></li>
+                                   <li><a class="dropdown-item" href="/category/ProductReview">Product Review</a></li> 
+                                   <li><a class="dropdown-item" href="/category/Political">Political</a></li> 
+                                   <li><a class="dropdown-item" href="/category/Animals">Animals</a></li> 
+                                   <li><a class="dropdown-item" href="/category/Beauty">Beauty</a></li> 
+                                  
                                 </ul>
                             </li>
                         </ul>
@@ -35,121 +36,126 @@
             </div>
         </div>
     </div>
-    
-    <div class="row">
-        
+
+    <div class="container-fluid">
+
         {{#each post}}
-            {{#if isLayout1}}
-                <ul class="row">
-                    <p>ID: {{this.id}} - - - - - </p>
-                    <p id="{{this.id}}categoryText"> Category: {{this.category}}</p>
-                    <button class="delete-btn" data-id={{this.id}}>Delete</button>
-                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
-                    <h3 class="row" id="{{this.id}}titleText"> {{title}} </h3>
+        {{#if isLayout1}}
+        <ul class="row" id="layoutcon">
+            <div class="row" id="layoutbtns">
+                <p>ID: {{this.id}} - - - - - </p>
+                <p id="{{this.id}}categoryText"> Category: {{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
+            </div>
+            <h3 class="row" id="{{this.id}}titleText"> {{title}} </h3>
 
+            <div class="row" id="layouttxt">
+                <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}} </h6>
-                                <p class="row" id="{{this.id}}text1Text">
-                                    {{this.text1}}
-                                </p>
-                            </div>
-                            <div class="row">
-                                <img class="img1L2" id="{{this.id}}img2Text" src="{{this.img2}}"  />
-                            </div>
+                        <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}} </h6>
+                        <p class="row" id="{{this.id}}text1Text">
+                            {{this.text1}}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <img class="img1L2" id="{{this.id}}img2Text" src="{{this.img2}}" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <img class="img1L2" id="{{this.id}}img1Text" src="{{this.img1}}" />
+                    </div>
+                    <div class="row">
+                        <h6 class="row" id="{{this.id}}header2Text"> {{this.header2}} </h6>
+                        <p class="row" id="{{this.id}}text2Text">
+                            {{this.text2}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ul>
+        <div class="row" id="update-div{{this.id}}">
+            {{!-- update div generates here  --}}
+        </div>
+        {{/if}}
+
+        {{#if isLayout2}}
+        <ul class="row" id="layoutcon">
+            <div class="row" id="layoutbtns">
+                <p>ID: {{this.id}} - - - - - </p>
+                <p> Category: {{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
+                <h3 class="row"> {{this.title}} </h3>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <img class="img1L2" src="{{this.img1}}" />
                         </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <img class="img1L2" id="{{this.id}}img1Text" src="{{this.img1}}" />
-                            </div>
-                            <div class="row">
-                                <h6 class="row" id="{{this.id}}header2Text"> {{this.header2}} </h6>
-                                <p class="row" id="{{this.id}}text2Text">
-                                    {{this.text2}}
-                                </p>
-                            </div>
+                        <div class="row">
+                            <h6 class="row"> {{this.header1}} </h6>
+                            <p class="row">
+                                {{text1}}
+                            </p>
                         </div>
                     </div>
-                </ul>
-                <div class="row" id="update-div{{this.id}}">
-                    {{!-- update div generates here  --}}
-                </div>
-            {{/if}}
-
-            {{#if isLayout2}}
-                <ul class="row">
-                    <p>ID: {{this.id}} - - - - - </p>
-                    <p> Category: {{this.category}}</p>
-                    <button class="delete-btn" data-id={{this.id}}>Delete</button>
-                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
-                    <h3 class="row"> {{this.title}} </h3>
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="row">
-                                <img class="img1L2" src="{{this.img1}}" />
-                            </div>
-                            <div class="row">
-                                <h6 class="row"> {{this.header1}} </h6>
-                                <p class="row">
-                                    {{text1}}
-                                </p>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <h6 class="row"> {{this.sideHead}} </h6>
+                            <p class="row"> {{this.sideText}} </p>
                         </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <h6 class="row"> {{this.sideHead}} </h6>
-                                <p class="row"> {{this.sideText}} </p>
-                            </div>
-                        </div>
-
                     </div>
-                </ul>
-                <div class="row" id="update-div{{this.id}}">
-                    {{!-- update div generates here  --}}
                 </div>
-            {{/if}}
+            </div>
+        </ul>
+        <div class="row" id="update-div{{this.id}}">
+            {{!-- update div generates here  --}}
+        </div>
+        {{/if}}
 
-            {{#if isLayout3}}
-                <ul class="row">
-                    <p>ID: {{this.id}} - - - - - </p>
-                    <p> Category: {{this.category}}</p>
-                    <button class="delete-btn" data-id={{this.id}}>Delete</button>
-                    <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
-                    <h3 class="row"> {{this.title}} </h3>
+        {{#if isLayout3}}
+        <ul class="row" id="layoutcon">
+            <div class="row" id="layoutbtns">
+                <p>ID: {{this.id}} - - - - - </p>
+                <p> Category: {{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete</button>
+                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
+                <h3 class="row"> {{this.title}} </h3>
+                <div class="row">
+                    <h6 class="row"> {{this.header1}}</h6>
                     <div class="row">
-                        <h6 class="row"> {{this.header1}}</h6>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img class="img1L2" src="{{this.img1}}" />
-                            </div>
-                            <div class="col-md-9">
-                                <p>{{this.text1}}</p>
-                            </div>
+                        <div class="col-md-3">
+                            <img class="img1L2" src="{{this.img1}}" />
                         </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img class="img1L2" src="{{this.img2}}" />
-                            </div>
-                            <div class="col-md-9">
-                                <p>{{this.text2}}</p>
-                            </div>
+                        <div class="col-md-9">
+                            <p>{{this.text1}}</p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img class="img1L2" src="{{this.img3}}" />
-                            </div>
-                            <div class="col-md-9">
-                                <p>{{this.text3}}</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img1L2" src="{{this.img2}}" />
                         </div>
-                    </div>   
-                </ul>
-                <div class="row" id="update-div{{this.id}}">
-                    {{!-- update div generates here  --}}
+                        <div class="col-md-9">
+                            <p>{{this.text2}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img class="img1L2" src="{{this.img3}}" />
+                        </div>
+                        <div class="col-md-9">
+                            <p>{{this.text3}}</p>
+                        </div>
+                    </div>
                 </div>
-            {{/if}}
+            </div>
+        </ul>
+        <div class="row" id="update-div{{this.id}}">
+            {{!-- update div generates here  --}}
+        </div>
+        {{/if}}
         {{/each}}
 
     </div>
