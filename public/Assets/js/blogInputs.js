@@ -25,6 +25,11 @@ $('document').ready(function () {
         layout3Input();
     });
 
+    $("#layout4-btn").on("click", function () {
+        console.log("Layout4 TEST");
+        layout4Input();
+    });
+
 
 //create the layout1 template
    
@@ -196,6 +201,53 @@ $('document').ready(function () {
         newPost(newPost3);
     });
 
+    //create the layout3 template
+    const layout4Input = () => {
+        const inputDiv = $("#input-div");
+
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="4title-input">`);
+        inputDiv.append(`<label>Header 1</label>`);
+        inputDiv.append(`<input class="form-control" id="4header1-input">`);;
+        inputDiv.append(`<label>Text 1</label>`);
+        inputDiv.append(`<textarea class="form-control" id="4text1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Text 2</label>`);
+        inputDiv.append(`<textarea class="form-control" id="4text2-input" rows="3"></textarea>`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="4category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+        </select>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit4-btn"> Submit </button>`);
+    }
+
+    $("body").on("click", "#submit4-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPost3 = {
+            title: $("#4title-input").val().trim(),
+            header1: $("#4header1-input").val().trim(),
+            text1: $("#4text1-input").val().trim(),
+            text2: $("#4text2-input").val().trim(),
+            category: $("#4category-input").val(),
+            selectedLayout: 'layout4',
+            isLayout4: true
+        }
+        console.log("Layout Button Test", newPost3);
+        newPost(newPost3);
+    });
+
+
     
     //create new post
     const newPost = function(Post) {
@@ -230,7 +282,50 @@ $('document').ready(function () {
 
     const updateDiv = (id, layout) => {
         const updateDiv = $(`#update-div${id}`);
-        if (layout === "layout3") {
+        if (layout === "layout4") {
+            var titleText = $(`#${id}titleText`).text();
+            var header1Text = $(`#${id}header1Text`).text();
+            var text1Text = $(`#${id}text1Text`).text();
+            var text2Text = $(`#${id}text2Text`).text();
+            
+            updateDiv.empty();
+            updateDiv.append(`<form>`);
+            updateDiv.append(`<div class="form-group">`);
+            updateDiv.append(`<label>Title</label>`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="4title-input">`);
+            updateDiv.append(`<label>Header 1</label>`);
+            updateDiv.append(`<input value="${header1Text}" class="form-control" id="4header1-input">`);
+            updateDiv.append(`<label>Text1</label>`);
+            updateDiv.append(`<textarea class="form-control" id="4text1-input" rows="3">${text1Text}</textarea>`);
+            updateDiv.append(`<label>Text2</label>`);
+            updateDiv.append(`<textarea class="form-control" id="4text2-input" rows="3">${text2Text}</textarea>`);
+            updateDiv.append(`<label for="category">Select Category:</label>`);
+            updateDiv.append(`<select class="custom-select" id="4category-input">
+            <option value="Personal">Personal</option>
+            <option value="Review">Review</option>
+            <option value="Political">Political</option>
+            <option value="Animals">Animals</option>
+            <option value="Beauty">Beauty</option>
+            </select>`);
+            updateDiv.append(`</div>`);
+            updateDiv.append(`</form>`);
+
+            updateDiv.append(`<button class="submit-changes-btn"> Submit Changes </button>`);
+
+            $("body").on("click", ".submit-changes-btn", function updateFormSubmit (event) {
+                event.preventDefault();
+        
+                console.log(`updated form ${id}`)
+                const newPost4 = {
+                    title: $("#4title-input").val().trim(),
+                    header1: $("#4header1-input").val().trim(),
+                    text1: $("#4text1-input").val().trim(),
+                    text2: $("#4text2-input").val().trim(),
+                    category: $("#4category-input").val()
+                }
+                updatePost(id, newPost4);
+            }); 
+        }else if (layout === "layout3") {
             var titleText = $(`#${id}titleText`).text();
             var header1Text = $(`#${id}header1Text`).text();
             var img1Text = $(`#${id}img1Text`).prop('src');

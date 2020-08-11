@@ -92,6 +92,18 @@ module.exports = function(sequelize, DataTypes) {
     {
         type: DataTypes.BOOLEAN
     },
+    isLayout4:
+    {
+        type: DataTypes.BOOLEAN
+    },
+    isLayout5:
+    {
+        type: DataTypes.BOOLEAN
+    },
+    isLayout6:
+    {
+        type: DataTypes.BOOLEAN
+    },
     selectedLayout:
     {
         type: DataTypes.STRING
