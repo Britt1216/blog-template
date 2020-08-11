@@ -168,7 +168,7 @@ $('document').ready(function () {
         <option value="Political">Political</option>
         <option value="Animals">Animals</option>
         <option value="Beauty">Beauty</option>
-      </select>`);
+        </select>`);
         inputDiv.append(`</div>`);
         inputDiv.append(`</form>`);
         inputDiv.append(`</div>`);
@@ -231,25 +231,35 @@ $('document').ready(function () {
     const updateDiv = (id, layout) => {
         const updateDiv = $(`#update-div${id}`);
         if (layout === "layout3") {
+            var titleText = $(`#${id}titleText`).text();
+            var header1Text = $(`#${id}header1Text`).text();
+            var img1Text = $(`#${id}img1Text`).prop('src');
+            var text1Text = $(`#${id}text1Text`).text();
+            var img2Text = $(`#${id}img2Text`).prop('src');
+            var text2Text = $(`#${id}text2Text`).text();
+            var img3Text = $(`#${id}img3Text`).prop('src');
+            var text3Text = $(`#${id}text3Text`).text();
+            
+
             updateDiv.empty();
             updateDiv.append(`<form>`);
             updateDiv.append(`<div class="form-group">`);
             updateDiv.append(`<label>Title</label>`);
-            updateDiv.append(`<input class="form-control" id="3title-input">`);
+            updateDiv.append(`<input value="${titleText}" class="form-control" id="3title-input">`);
             updateDiv.append(`<label>Header 1</label>`);
-            updateDiv.append(`<input class="form-control" id="3header1-input">`);
+            updateDiv.append(`<input value="${header1Text}" class="form-control" id="3header1-input">`);
             updateDiv.append(`<label>Img1</label>`);
-            updateDiv.append(`<input class="form-control" id="3img1-input">`);
+            updateDiv.append(`<input value="${img1Text}" class="form-control" id="3img1-input">`);
             updateDiv.append(`<label>Text 1</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="3text1-input" rows="3">${text1Text}</textarea>`);
             updateDiv.append(`<label>Img2</label>`);
-            updateDiv.append(`<input class="form-control" id="3img2-input">`);
+            updateDiv.append(`<input value="${img2Text}" class="form-control" id="3img2-input">`);
             updateDiv.append(`<label>Text 2</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="3text2-input" rows="3">${text2Text}</textarea>`);
             updateDiv.append(`<label>Img3</label>`);
-            updateDiv.append(`<input class="form-control" id="3img3-input">`);
+            updateDiv.append(`<input value="${img3Text}" class="form-control" id="3img3-input">`);
             updateDiv.append(`<label>Text 3</label>`);
-            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3"></textarea>`);
+            updateDiv.append(`<textarea class="form-control" id="3text3-input" rows="3">${text3Text}</textarea>`);
             updateDiv.append(`<label for="category">Select Category:</label>`);
             updateDiv.append(`<select class="custom-select" id="3category-input">
             <option value="Personal">Personal</option>

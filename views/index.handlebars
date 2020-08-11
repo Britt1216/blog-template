@@ -121,34 +121,35 @@
         <ul class="row" id="layoutcon">
             <div class="row" id="layoutbtns">
                 <p>ID: {{this.id}} - - - - - </p>
-                <p> Category: {{this.category}}</p>
+                <p>Cateory: - </p>
+                <p id="{{this.id}}categoryText">{{this.category}}</p>
                 <button class="delete-btn" data-id={{this.id}}>Delete</button>
                 <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
-                <h3 class="row"> {{this.title}} </h3>
+                <h3 class="row" id="{{this.id}}titleText"> {{this.title}} </h3>
                 <div class="row">
-                    <h6 class="row"> {{this.header1}}</h6>
+                    <h6 class="row" id="{{this.id}}header1Text"> {{this.header1}}</h6>
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img1L2" src="{{this.img1}}" />
+                            <img id="{{this.id}}img1Text" class="img1L2" src="{{this.img1}}" />
                         </div>
                         <div class="col-md-9">
-                            <p>{{this.text1}}</p>
+                            <p id="{{this.id}}text1Text">{{this.text1}}</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img1L2" src="{{this.img2}}" />
+                            <img id="{{this.id}}img2Text" class="img1L2" src="{{this.img2}}" />
                         </div>
                         <div class="col-md-9">
-                            <p>{{this.text2}}</p>
+                            <p id="{{this.id}}text2Text">{{this.text2}}</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <img class="img1L2" src="{{this.img3}}" />
+                            <img id="{{this.id}}img3Text" class="img1L2" src="{{this.img3}}" />
                         </div>
                         <div class="col-md-9">
-                            <p>{{this.text3}}</p>
+                            <p id="{{this.id}}text3Text">{{this.text3}}</p>
                         </div>
                     </div>
                 </div>
