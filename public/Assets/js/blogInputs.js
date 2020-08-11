@@ -25,6 +25,11 @@ $('document').ready(function () {
         layout3Input();
     });
 
+    $("#layout4-btn").on("click", function () {
+        console.log("Layout4 TEST");
+        layout43Input();
+    });
+
 
 //create the layout1 template
    
@@ -195,6 +200,53 @@ $('document').ready(function () {
         console.log("Layout Button Test", newPost3);
         newPost(newPost3);
     });
+
+    //create the layout3 template
+    const layout4Input = () => {
+        const inputDiv = $("#input-div");
+
+        inputDiv.empty();
+        inputDiv.append(`<form>`);
+        inputDiv.append(`<div class="form-group">`);
+        inputDiv.append(`<label>Title</label>`);
+        inputDiv.append(`<input class="form-control" id="4title-input">`);
+        inputDiv.append(`<label>Header 1</label>`);
+        inputDiv.append(`<input class="form-control" id="4header1-input">`);;
+        inputDiv.append(`<label>Text 1</label>`);
+        inputDiv.append(`<textarea class="form-control" id="4text1-input" rows="3"></textarea>`);
+        inputDiv.append(`<label>Text 2</label>`);
+        inputDiv.append(`<textarea class="form-control" id="4text2-input" rows="3"></textarea>`);
+        inputDiv.append(`<label for="category">Select Category:</label>`);
+        inputDiv.append(`<select class="custom-select" id="4category-input">
+        <option value="Personal">Personal</option>
+        <option value="Review">Review</option>
+        <option value="Political">Political</option>
+        <option value="Animals">Animals</option>
+        <option value="Beauty">Beauty</option>
+        </select>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</form>`);
+        inputDiv.append(`</div>`);
+        inputDiv.append(`</div>`);
+
+        inputDiv.append(`<button id="submit4-btn"> Submit </button>`);
+    }
+
+    $("body").on("click", "#submit4-btn", function handleFormSubit(event) {
+        event.preventDefault();
+        const newPost3 = {
+            title: $("#4title-input").val().trim(),
+            header1: $("#4header1-input").val().trim(),
+            text1: $("#4text1-input").val().trim(),
+            text2: $("#4text2-input").val().trim(),
+            category: $("#4category-input").val(),
+            selectedLayout: 'layout4',
+            isLayout4: true
+        }
+        console.log("Layout Button Test", newPost3);
+        newPost(newPost3);
+    });
+
 
     
     //create new post
