@@ -6,9 +6,8 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
+/* Body and container */
 body {
-  /* background-color: #e2d0c2; */
   display: block;
   height: 100%;
   width: 100%;
@@ -24,6 +23,7 @@ container {
   margin: auto;
   padding: 0px; 
 }
+
 
 /* Top image */
 .hero-image {
@@ -43,6 +43,7 @@ margin-bottom:  10px;
     transform: translate(-50%, -50%);
     color: black;
   } 
+
 
 /* NAVBAR */
   nav {
@@ -74,7 +75,9 @@ margin-bottom:  10px;
     background: palegoldenrod;
     border-radius: 5px;
   }
-  
+
+
+  /* Drop Menu */
   ul.drop-menu {
     position: absolute;
     top: 100%;
@@ -92,19 +95,15 @@ margin-bottom:  10px;
   ul.drop-menu li:last-child {
     border-radius: 0px 0px 5px 5px;
   }
-  
   ul.drop-menu li {
     display: none;
   }
-  
   li:hover > ul.drop-menu li {
     display: block;
-  }
-  
+  }  
   li:hover > ul.drop-menu.menu-4 {
     perspective: 1000px;
   }
-  
   li {
     opacity: 0;
     transform-origin: top right;
@@ -219,7 +218,7 @@ margin-bottom:  10px;
   }
 
 
-/* Button styling */
+/* Create button */
   #create-btn1
   {
     border: none;
@@ -233,7 +232,6 @@ margin-bottom:  10px;
     color: black;
     overflow: hidden;
 }
-
 #create-btn1 span {
     position: absolute;
     left: 0;
@@ -244,7 +242,6 @@ margin-bottom:  10px;
     z-index: -1;
     border: 5px solid #7fe3d2;
 }
-
 #create-btn1 span::before {
     content: "";
     position: absolute;
@@ -256,15 +253,110 @@ margin-bottom:  10px;
     transform: translate(-50%, -50%) rotate(-60deg);
     transition: all .3s;
 }
-
 #create-btn1:hover span::before, #create-btn1:focus span::before{
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
     background: #7FE3D2;
 }
-
 #create-btn1:hover, #create-btn1:focus{
     color: rgb(3, 3, 3);
+}
+
+
+/* Delete button */
+.delete-btn
+{
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.5em 2.2em;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  overflow: hidden;
+  z-index: 90;
+}
+.delete-btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 5px solid red;
+}
+.delete-btn span::before {
+  content: "";
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all .3s;
+}
+.delete-btn:hover span::before, .delete-btn:focus span::before{
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: red;
+}
+.delete-btn:hover, .delete-btn:focus{
+  color: rgb(3, 3, 3);
+}
+
+/* Update Button */
+.update-btn
+{
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.5em 2.2em;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  color: black;
+  overflow: hidden;
+  z-index: 90;
+}
+.update-btn span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 5px solid green;
+}
+.update-btn span::before {
+  content: "";
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all .3s;
+}
+.update-btn:hover span::before, .update-btn:focus span::before{
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: green;
+}
+.update-btn:hover, .update-btn:focus{
+  color: rgb(3, 3, 3);
+}
+
+/* Blog title */
+.categoryH{
+  font-size: 22px;
+  font-weight: bolder;
 }
 
 
@@ -284,6 +376,7 @@ margin-bottom:  10px;
     margin-bottom: 5px;
   }
 
+
   /* Layouts */
 .row{
   display: flex;
@@ -300,7 +393,7 @@ margin-bottom:  10px;
 #layoutcon {
   display: flex;
 background-color: cornsilk;
-border: 20px solid black;
+border: 10px solid black;
 text-align: center;
 }
 #layoutbtns {
@@ -314,12 +407,27 @@ p {
   text-align: initial;
 }
   /* Second page */
-  .carousel-inner {
-    font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
+ 
+  .carousel {
+    background: #eee;
   }
-
+  
+  .carousel-cell {
+    margin-right: 20px;
+    overflow: hidden;
+    width: 66%;
+  }
+  
+  .carousel-cell img {
+    display: block;
+    height: 200px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .carousel-cell img {
+      height: 400px;
+    }
+  }
  
 .img1L2 {
   height: auto;

@@ -19,13 +19,13 @@
                         <ul>
                             <li>Category
                                 <ul class="drop-menu menu-#{i}">
-                                   <li><a class="dropdown-item" href="/">See All</a></li>
-                                   <li><a class="dropdown-item" href="/category/Personal">Personal</a></li>
-                                   <li><a class="dropdown-item" href="/category/Review">Review</a></li> 
-                                   <li><a class="dropdown-item" href="/category/Political">Political</a></li> 
-                                   <li><a class="dropdown-item" href="/category/Animals">Animals</a></li> 
-                                   <li><a class="dropdown-item" href="/category/Beauty">Beauty</a></li> 
-                                  
+                                    <li><a class="dropdown-item" href="/">See All</a></li>
+                                    <li><a class="dropdown-item" href="/category/Personal">Personal</a></li>
+                                    <li><a class="dropdown-item" href="/category/Review">Review</a></li>
+                                    <li><a class="dropdown-item" href="/category/Political">Political</a></li>
+                                    <li><a class="dropdown-item" href="/category/Animals">Animals</a></li>
+                                    <li><a class="dropdown-item" href="/category/Beauty">Beauty</a></li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -45,9 +45,10 @@
             <div class="row" id="layoutbtns">
                 <p>ID: {{this.id}} - - - - - </p>
                 <p>Cateory: - </p>
-                <p id="{{this.id}}categoryText">{{this.category}}</p>
-                <button class="delete-btn" data-id={{this.id}}>Delete</button>
-                <button class="update-btn" data-id={{this.id}} data-value="{{this.selectedLayout}}">Update</button>
+                <p class="categoryH" id="{{this.id}}categoryText">{{this.category}}</p>
+                <button class="delete-btn" data-id={{this.id}}>Delete<span></span></button>
+                <button class="update-btn" data-id={{this.id}}
+                    data-value="{{this.selectedLayout}}">Update<span></span></button>
             </div>
             <h3 class="row" id="{{this.id}}titleText"> {{title}} </h3>
 
